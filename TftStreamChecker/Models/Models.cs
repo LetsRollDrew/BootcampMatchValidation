@@ -51,3 +51,9 @@ public class MatchInfo
     public int? TftSetNumber { get; set; }
     public string? TftGameType { get; set; }
 }
+
+public class TwitchTokenResponse
+{
+    public string AccessToken { get; set; } = string.Empty;
+    public int ExpiresIn { get; set; }
+}

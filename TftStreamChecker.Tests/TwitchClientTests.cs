@@ -1,0 +1,92 @@
+using System.Net;
+using System.Net.Http.Json;
+using TftStreamChecker.Clients;
+using TftStreamChecker.Http;
+using TftStreamChecker.Logging;
+using TftStreamChecker.Models;
+using Xunit;
+
+namespace TftStreamChecker.Tests;
+
+public class TwitchClientTests
+{
+    [Fact]
+    public async Task gets_and_caches_token()
+    {
+        var handler = new QueueHandler(new HttpResponseMessage(HttpStatusCode.OK)
+        {
+            Content = JsonContent.Create(new TwitchTokenResponse
+            {
+                AccessToken = "token1",
+                ExpiresIn = 3600
+            })
+        });
+
+        var client = new TwitchClient(
+            new HttpRetryClient(new HttpClient(handler), new ConsoleLogger(false)),
+            new ConsoleLogger(false),
+            "id",
+            "secret");
+
+        var token1 = await client.GetAppToken();
+        var token2 = await client.GetAppToken();
+
+        Assert.Equal("token1", token1);
+        Assert.Equal("token1", token2);
+        Assert.Single(handler.Requests);
+    }
+
+    [Fact]
+    public async Task refreshes_when_expired()
+    {
+        var handler = new QueueHandler(
+            new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = JsonContent.Create(new TwitchTokenResponse
+                {
+                    AccessToken = "token1",
+                    ExpiresIn = 1
+                })
+            },
+            new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = JsonContent.Create(new TwitchTokenResponse
+                {
+                    AccessToken = "token2",
+                    ExpiresIn = 3600
+                })
+            });
+
+        var client = new TwitchClient(
+            new HttpRetryClient(new HttpClient(handler), new ConsoleLogger(false)),
+            new ConsoleLogger(false),
+            "id",
+            "secret");
+
+        var token1 = await client.GetAppToken();
+        await Task.Delay(1200);
+        var token2 = await client.GetAppToken();
+
+        Assert.Equal("token1", token1);
+        Assert.Equal("token2", token2);
+        Assert.Equal(2, handler.Requests.Count);
+    }
+
+    private class QueueHandler : HttpMessageHandler
+    {
+        private readonly Queue<HttpResponseMessage> _responses;
+        public List<HttpRequestMessage> Requests { get; } = new();
+
+        public QueueHandler(params HttpResponseMessage[] responses)
+        {
+            _responses = new Queue<HttpResponseMessage>(responses);
+        }
+
+        protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+        {
+            Requests.Add(request);
+            if (_responses.Count == 0) throw new InvalidOperationException("no responses queued");
+            return Task.FromResult(_responses.Dequeue());
+        }
+    }
+}
