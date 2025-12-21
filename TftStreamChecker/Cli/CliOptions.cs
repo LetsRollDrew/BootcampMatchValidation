@@ -11,6 +11,7 @@ public class CliOptions
     public string? EventStart { get; init; }
     public string? EventEnd { get; init; }
     public double Threshold { get; init; } = 0.5;
+    public bool Verbose { get; init; }
 
     public static CliOptions Parse(string[] args)
     {
@@ -23,6 +24,7 @@ public class CliOptions
         string? eventStart = null;
         string? eventEnd = null;
         double threshold = 0.5;
+        var verbose = false;
 
         for (var i = 0; i < args.Length; i++)
         {
@@ -76,6 +78,9 @@ public class CliOptions
                     }
                     i++;
                     break;
+                case "--verbose":
+                    verbose = true;
+                    break;
             }
         }
 
@@ -89,7 +94,8 @@ public class CliOptions
             EventYear = eventYear,
             EventStart = eventStart,
             EventEnd = eventEnd,
-            Threshold = threshold
+            Threshold = threshold,
+            Verbose = verbose
         };
     }
 }
