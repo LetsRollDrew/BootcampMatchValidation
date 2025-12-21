@@ -1,4 +1,5 @@
 using System.Net.Http.Json;
+using TftStreamChecker.Cache;
 using TftStreamChecker.Http;
 using TftStreamChecker.Logging;
 using TftStreamChecker.Models;
@@ -11,16 +12,20 @@ public class TwitchClient
     private readonly ConsoleLogger _log;
     private readonly string _clientId;
     private readonly string _clientSecret;
+    private readonly CacheStore? _cache;
+    private readonly bool _useCache;
 
     private string? _token;
     private DateTimeOffset _expiresAt;
 
-    public TwitchClient(HttpRetryClient http, ConsoleLogger log, string clientId, string clientSecret)
+    public TwitchClient(HttpRetryClient http, ConsoleLogger log, string clientId, string clientSecret, CacheStore? cache = null, bool useCache = true)
     {
         _http = http;
         _log = log;
         _clientId = clientId;
         _clientSecret = clientSecret;
+        _cache = cache;
+        _useCache = useCache;
     }
 
     public async Task<string> GetAppToken(CancellationToken cancellationToken = default)
@@ -51,6 +56,18 @@ public class TwitchClient
     {
         if (string.IsNullOrWhiteSpace(login)) throw new ArgumentException("twitch login required");
 
+        var cacheKey = CacheKeyForUser(login);
+        if (_useCache && _cache != null)
+        {
+            var cached = _cache.Read<TwitchUserResponse>(cacheKey);
+            var userCached = cached?.Data.FirstOrDefault();
+            if (userCached != null && !string.IsNullOrWhiteSpace(userCached.Id))
+            {
+                _log.Verbose("twitch user cache hit for " + login);
+                return userCached;
+            }
+        }
+
         var token = await GetAppToken(cancellationToken);
         var uri = $"https://api.twitch.tv/helix/users?login={Uri.EscapeDataString(login)}";
         _log.Verbose("fetching twitch user " + login);
@@ -70,6 +87,12 @@ public class TwitchClient
         var user = data?.Data.FirstOrDefault();
         if (user == null || string.IsNullOrWhiteSpace(user.Id))
             throw new InvalidOperationException("twitch user not found for login " + login);
+
+        if (_useCache && _cache != null && data != null)
+        {
+            _cache.Write(cacheKey, data);
+        }
+
         return user;
     }
 
@@ -80,6 +103,17 @@ public class TwitchClient
         double bufferHours,
         CancellationToken cancellationToken = default)
     {
+        var cacheKey = CacheKeyForVods(userId, windowStartMs, windowEndMs, bufferHours);
+        if (_useCache && _cache != null)
+        {
+            var cached = _cache.Read<List<VodInterval>>(cacheKey);
+            if (cached != null)
+            {
+                _log.Verbose("vod cache hit for " + userId);
+                return cached;
+            }
+        }
+
         var token = await GetAppToken(cancellationToken);
         var cursor = (string?)null;
         var vods = new List<VodInterval>();
@@ -109,6 +143,7 @@ public class TwitchClient
 
             foreach (var vod in payload.Data)
             {
+                if (string.IsNullOrWhiteSpace(vod.CreatedAt)) continue;
                 var startMs = DateTimeOffset.Parse(vod.CreatedAt).ToUnixTimeMilliseconds();
                 var durationSec = ParseDuration(vod.Duration);
                 var endMs = startMs + durationSec * 1000;
@@ -129,12 +164,17 @@ public class TwitchClient
         }
 
         vods.Sort((a, b) => a.StartMs.CompareTo(b.StartMs));
+
+        if (_useCache && _cache != null)
+        {
+            _cache.Write(cacheKey, vods);
+        }
+
         return vods;
     }
 
     public static int ParseDuration(string duration)
     {
-        // twitch duration like 1h2m3s
         var total = 0;
         var number = 0;
         foreach (var c in duration)
@@ -160,5 +200,16 @@ public class TwitchClient
             number = 0;
         }
         return total;
+    }
+
+    private static string CacheKeyForUser(string login)
+    {
+        return Path.Combine("twitchUsers", login + ".json");
+    }
+
+    private static string CacheKeyForVods(string userId, long startMs, long endMs, double bufferHours)
+    {
+        var file = $"{userId}_{startMs}_{endMs}_{bufferHours}.json";
+        return Path.Combine("vods", file);
     }
 }

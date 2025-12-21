@@ -8,6 +8,7 @@ using TftStreamChecker.Clients;
 using TftStreamChecker.Models;
 using TftStreamChecker.Classification;
 using TftStreamChecker.Output;
+using TftStreamChecker.Cache;
 
 namespace TftStreamChecker;
 
@@ -92,8 +93,9 @@ public static class Program
 
         using var httpClient = new HttpClient();
         var retry = new HttpRetryClient(httpClient, log);
-        var riot = new RiotClient(retry, log, env.RiotApiKey);
-        var twitch = new TwitchClient(retry, log, env.TwitchClientId, env.TwitchClientSecret);
+        var cache = new CacheStore();
+        var riot = new RiotClient(retry, log, env.RiotApiKey, cache: cache, useCache: options.UseCache);
+        var twitch = new TwitchClient(retry, log, env.TwitchClientId, env.TwitchClientSecret, cache: cache, useCache: options.UseCache);
 
         var puuid = await riot.ResolvePuuid(riotId);
         var matchIds = await riot.ListMatchIds(puuid, riotId.Routing, window.StartMs, window.EndMs);

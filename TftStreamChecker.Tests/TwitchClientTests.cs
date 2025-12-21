@@ -26,7 +26,9 @@ public class TwitchClientTests
             new HttpRetryClient(new HttpClient(handler), new ConsoleLogger(false)),
             new ConsoleLogger(false),
             "id",
-            "secret");
+            "secret",
+            cache: new Cache.CacheStore(TestTempDir),
+            useCache: false);
 
         var token1 = await client.GetAppToken();
         var token2 = await client.GetAppToken();
@@ -61,7 +63,9 @@ public class TwitchClientTests
             new HttpRetryClient(new HttpClient(handler), new ConsoleLogger(false)),
             new ConsoleLogger(false),
             "id",
-            "secret");
+            "secret",
+            cache: new Cache.CacheStore(TestTempDir),
+            useCache: false);
 
         var token1 = await client.GetAppToken();
         await Task.Delay(1200);
@@ -99,7 +103,9 @@ public class TwitchClientTests
             new HttpRetryClient(new HttpClient(handler), new ConsoleLogger(false)),
             new ConsoleLogger(false),
             "id",
-            "secret");
+            "secret",
+            cache: new Cache.CacheStore(TestTempDir),
+            useCache: false);
 
         var user = await client.GetUserByLogin("treeotter");
 
@@ -140,7 +146,9 @@ public class TwitchClientTests
             new HttpRetryClient(new HttpClient(handler), new ConsoleLogger(false)),
             new ConsoleLogger(false),
             "id",
-            "secret");
+            "secret",
+            cache: new Cache.CacheStore(TestTempDir),
+            useCache: false);
 
         var start = new DateTimeOffset(2023, 12, 2, 0, 0, 0, TimeSpan.Zero).ToUnixTimeMilliseconds();
         var end = new DateTimeOffset(2023, 12, 6, 0, 0, 0, TimeSpan.Zero).ToUnixTimeMilliseconds();
@@ -150,6 +158,51 @@ public class TwitchClientTests
         Assert.Single(vods);
         Assert.Equal("2", vods[0].Id);
         Assert.Equal(2, handler.Requests.Count);
+    }
+
+    [Fact]
+    public async Task uses_cached_user_when_available()
+    {
+        var cache = new Cache.CacheStore(TestTempDir);
+        cache.Write("twitchUsers/treeotter.json", new TwitchUserResponse
+        {
+            Data = new List<TwitchUserDto> { new TwitchUserDto { Id = "cached", Login = "treeotter" } }
+        });
+
+        var handler = new QueueHandler(Array.Empty<HttpResponseMessage>());
+        var client = new TwitchClient(
+            new HttpRetryClient(new HttpClient(handler), new ConsoleLogger(false)),
+            new ConsoleLogger(false),
+            "id",
+            "secret",
+            cache: cache);
+
+        var user = await client.GetUserByLogin("treeotter");
+        Assert.Equal("cached", user.Id);
+        Assert.Empty(handler.Requests);
+    }
+
+    [Fact]
+    public async Task uses_cached_vods_when_available()
+    {
+        var cache = new Cache.CacheStore(TestTempDir);
+        cache.Write("vods/123_0_1000_0.json", new List<VodInterval>
+        {
+            new VodInterval { Id = "v1", StartMs = 0, EndMs = 100 }
+        });
+
+        var handler = new QueueHandler(Array.Empty<HttpResponseMessage>());
+        var client = new TwitchClient(
+            new HttpRetryClient(new HttpClient(handler), new ConsoleLogger(false)),
+            new ConsoleLogger(false),
+            "id",
+            "secret",
+            cache: cache);
+
+        var vods = await client.ListVodIntervals("123", 0, 1000, 0);
+        Assert.Single(vods);
+        Assert.Equal("v1", vods[0].Id);
+        Assert.Empty(handler.Requests);
     }
 
     private class QueueHandler : HttpMessageHandler
@@ -180,4 +233,6 @@ public class TwitchClientTests
         }
         return null;
     }
+
+    private static string TestTempDir => Path.Combine(Path.GetTempPath(), "tft-twitch-cache-tests");
 }

@@ -13,6 +13,7 @@ public class CliOptions
     public double Threshold { get; init; } = 0.5;
     public bool Verbose { get; init; }
     public string? OutputCsv { get; init; } = "output/stream-check.csv";
+    public bool UseCache { get; init; } = true;
 
     public static CliOptions Parse(string[] args)
     {
@@ -27,6 +28,7 @@ public class CliOptions
         double threshold = 0.5;
         var verbose = false;
         string? outputCsv = "output/stream-check.csv";
+        var useCache = true;
 
         for (var i = 0; i < args.Length; i++)
         {
@@ -87,6 +89,9 @@ public class CliOptions
                     outputCsv = Next();
                     i++;
                     break;
+                case "--noCache":
+                    useCache = false;
+                    break;
             }
         }
 
@@ -102,7 +107,8 @@ public class CliOptions
             EventEnd = eventEnd,
             Threshold = threshold,
             Verbose = verbose,
-            OutputCsv = outputCsv
+            OutputCsv = outputCsv,
+            UseCache = useCache
         };
     }
 }
