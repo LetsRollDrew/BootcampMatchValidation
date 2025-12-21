@@ -4,6 +4,8 @@ VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TftStreamChecker", "TftStreamChecker\TftStreamChecker.csproj", "{F8CF04EE-81DE-41F1-886A-A015AC755F1D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TftStreamChecker.Tests", "TftStreamChecker.Tests\TftStreamChecker.Tests.csproj", "{3A9B0D18-0A5B-45A3-BEBA-0A8E58F2B2F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,6 +16,10 @@ Global
 		{F8CF04EE-81DE-41F1-886A-A015AC755F1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8CF04EE-81DE-41F1-886A-A015AC755F1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8CF04EE-81DE-41F1-886A-A015AC755F1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A9B0D18-0A5B-45A3-BEBA-0A8E58F2B2F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A9B0D18-0A5B-45A3-BEBA-0A8E58F2B2F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A9B0D18-0A5B-45A3-BEBA-0A8E58F2B2F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A9B0D18-0A5B-45A3-BEBA-0A8E58F2B2F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
