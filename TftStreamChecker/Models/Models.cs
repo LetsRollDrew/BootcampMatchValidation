@@ -90,3 +90,14 @@ public class TwitchPaginationDto
 {
     public string? Cursor { get; set; }
 }
+
+public class MatchStats
+{
+    public int Total { get; set; }
+    public int OnStream { get; set; }
+    public int OffStream { get; set; }
+    public int Unknown { get; set; }
+    public double PctKnown { get; set; }
+    public double PctTotal { get; set; }
+    public bool Pass { get; set; }
+}
