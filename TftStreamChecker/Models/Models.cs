@@ -57,3 +57,15 @@ public class TwitchTokenResponse
     public string AccessToken { get; set; } = string.Empty;
     public int ExpiresIn { get; set; }
 }
+
+public class TwitchUserResponse
+{
+    public List<TwitchUserDto> Data { get; set; } = new();
+}
+
+public class TwitchUserDto
+{
+    public string Id { get; set; } = string.Empty;
+    public string Login { get; set; } = string.Empty;
+    public string DisplayName { get; set; } = string.Empty;
+}

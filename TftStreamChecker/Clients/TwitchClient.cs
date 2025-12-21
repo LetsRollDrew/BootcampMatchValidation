@@ -46,4 +46,30 @@ public class TwitchClient
         _expiresAt = DateTimeOffset.UtcNow.AddSeconds(Math.Max(0, token.ExpiresIn));
         return _token;
     }
+
+    public async Task<TwitchUserDto> GetUserByLogin(string login, CancellationToken cancellationToken = default)
+    {
+        if (string.IsNullOrWhiteSpace(login)) throw new ArgumentException("twitch login required");
+
+        var token = await GetAppToken(cancellationToken);
+        var uri = $"https://api.twitch.tv/helix/users?login={Uri.EscapeDataString(login)}";
+        _log.Verbose("fetching twitch user " + login);
+
+        var response = await _http.SendAsync(
+            () =>
+            {
+                var request = new HttpRequestMessage(HttpMethod.Get, uri);
+                request.Headers.Add("Client-ID", _clientId);
+                request.Headers.Add("Authorization", "Bearer " + token);
+                return request;
+            },
+            cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+        var data = await response.Content.ReadFromJsonAsync<TwitchUserResponse>(cancellationToken: cancellationToken);
+        var user = data?.Data.FirstOrDefault();
+        if (user == null || string.IsNullOrWhiteSpace(user.Id))
+            throw new InvalidOperationException("twitch user not found for login " + login);
+        return user;
+    }
 }

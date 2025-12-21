@@ -72,6 +72,46 @@ public class TwitchClientTests
         Assert.Equal(2, handler.Requests.Count);
     }
 
+    [Fact]
+    public async Task gets_user_by_login()
+    {
+        var handler = new QueueHandler(
+            new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = JsonContent.Create(new TwitchTokenResponse
+                {
+                    AccessToken = "token1",
+                    ExpiresIn = 3600
+                })
+            },
+            new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = JsonContent.Create(new TwitchUserResponse
+                {
+                    Data = new List<TwitchUserDto>
+                    {
+                        new TwitchUserDto { Id = "123", Login = "treeotter", DisplayName = "TreeOtter" }
+                    }
+                })
+            });
+
+        var client = new TwitchClient(
+            new HttpRetryClient(new HttpClient(handler), new ConsoleLogger(false)),
+            new ConsoleLogger(false),
+            "id",
+            "secret");
+
+        var user = await client.GetUserByLogin("treeotter");
+
+        Assert.Equal("123", user.Id);
+        Assert.Equal(2, handler.Requests.Count);
+
+        var req = handler.Requests.Last();
+        Assert.Equal("treeotter", QueryValue(req.RequestUri!, "login"));
+        Assert.Contains("Client-ID", req.Headers.Select(h => h.Key));
+        Assert.Contains("Authorization", req.Headers.Select(h => h.Key));
+    }
+
     private class QueueHandler : HttpMessageHandler
     {
         private readonly Queue<HttpResponseMessage> _responses;
@@ -88,5 +128,16 @@ public class TwitchClientTests
             if (_responses.Count == 0) throw new InvalidOperationException("no responses queued");
             return Task.FromResult(_responses.Dequeue());
         }
+    }
+
+    private static string? QueryValue(Uri uri, string key)
+    {
+        var query = uri.Query.TrimStart('?').Split('&', StringSplitOptions.RemoveEmptyEntries);
+        foreach (var part in query)
+        {
+            var kv = part.Split('=', 2);
+            if (kv.Length == 2 && kv[0] == key) return Uri.UnescapeDataString(kv[1]);
+        }
+        return null;
     }
 }
