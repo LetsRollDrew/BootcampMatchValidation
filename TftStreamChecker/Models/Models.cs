@@ -9,6 +9,12 @@ public class RiotId
 
 public class MatchSummary
 {
+    public string MatchId { get; set; } = string.Empty;
+    public long StartMs { get; set; }
+    public long EndMs { get; set; }
+    public int? QueueId { get; set; }
+    public int? SetNumber { get; set; }
+    public string? GameType { get; set; }
 }
 
 public class VodInterval
