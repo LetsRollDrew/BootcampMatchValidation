@@ -1,4 +1,5 @@
 using System.Net.Http.Json;
+using TftStreamChecker.Cache;
 using TftStreamChecker.Http;
 using TftStreamChecker.Logging;
 using TftStreamChecker.Models;
@@ -10,16 +11,31 @@ public class RiotClient
     private readonly HttpRetryClient _http;
     private readonly ConsoleLogger _log;
     private readonly string _apiKey;
+    private readonly CacheStore? _cache;
+    private readonly bool _useCache;
 
-    public RiotClient(HttpRetryClient http, ConsoleLogger log, string apiKey)
+    public RiotClient(HttpRetryClient http, ConsoleLogger log, string apiKey, CacheStore? cache = null, bool useCache = true)
     {
         _http = http;
         _log = log;
         _apiKey = apiKey;
+        _cache = cache;
+        _useCache = useCache;
     }
 
     public async Task<string> ResolvePuuid(RiotId riotId, CancellationToken cancellationToken = default)
     {
+        var cacheKey = CacheKeyForPuuid(riotId);
+        if (_useCache && _cache != null)
+        {
+            var cached = _cache.Read<RiotAccountDto>(cacheKey);
+            if (cached?.Puuid?.Length > 0)
+            {
+                _log.Verbose("puuid cache hit for " + riotId.GameName + "#" + riotId.TagLine);
+                return cached.Puuid;
+            }
+        }
+
         var uri =
             $"https://{riotId.Routing.ToLowerInvariant()}.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{Uri.EscapeDataString(riotId.GameName)}/{Uri.EscapeDataString(riotId.TagLine)}";
 
@@ -41,6 +57,12 @@ public class RiotClient
         var dto = await response.Content.ReadFromJsonAsync<RiotAccountDto>(cancellationToken: cancellationToken);
         if (dto == null || string.IsNullOrWhiteSpace(dto.Puuid))
             throw new InvalidOperationException("puuid missing from riot response");
+
+        if (_useCache && _cache != null)
+        {
+            _cache.Write(cacheKey, dto);
+        }
+
         return dto.Puuid;
     }
 
@@ -53,6 +75,21 @@ public class RiotClient
         int pageSize = 200,
         CancellationToken cancellationToken = default)
     {
+        var cacheKey = CacheKeyForMatchList(puuid, routing, startMs, endMs, maxMatches);
+        if (_useCache && _cache != null)
+        {
+            var cached = _cache.Read<List<string>>(cacheKey);
+            if (cached != null && cached.Count > 0)
+            {
+                _log.Verbose("match list cache hit for " + puuid);
+                if (maxMatches.HasValue && cached.Count > maxMatches.Value)
+                {
+                    return cached.Take(maxMatches.Value).ToList();
+                }
+                return cached;
+            }
+        }
+
         var ids = new List<string>();
         var start = 0;
         var clampedPage = Math.Max(1, pageSize);
@@ -86,6 +123,11 @@ public class RiotClient
             ids = ids.Take(maxMatches.Value).ToList();
         }
 
+        if (_useCache && _cache != null)
+        {
+            _cache.Write(cacheKey, ids);
+        }
+
         return ids;
     }
 
@@ -117,5 +159,17 @@ public class RiotClient
 
         response.EnsureSuccessStatusCode();
         return await response.Content.ReadFromJsonAsync<MatchDetailDto>(cancellationToken: cancellationToken);
+    }
+
+    private static string CacheKeyForPuuid(RiotId riotId)
+    {
+        var file = $"{riotId.Routing}_{Uri.EscapeDataString(riotId.GameName)}_{Uri.EscapeDataString(riotId.TagLine)}.json";
+        return Path.Combine("puuid", file);
+    }
+
+    private static string CacheKeyForMatchList(string puuid, string routing, long startMs, long endMs, int? maxMatches)
+    {
+        var file = $"{routing}_{puuid}_{startMs}_{endMs}_{maxMatches?.ToString() ?? "all"}.json";
+        return Path.Combine("matchLists", file);
     }
 }

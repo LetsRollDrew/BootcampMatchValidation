@@ -24,7 +24,8 @@ public class RiotClientTests
         var client = new RiotClient(
             new HttpRetryClient(new HttpClient(handler), new ConsoleLogger(false)),
             new ConsoleLogger(false),
-            "key");
+            "key",
+            cache: new Cache.CacheStore(TestTempDir));
 
         var puuid = await client.ResolvePuuid(new RiotId { GameName = "Tree Otter", TagLine = "3500", Routing = "AMERICAS" });
 
@@ -38,7 +39,9 @@ public class RiotClientTests
         var client = new RiotClient(
             new HttpRetryClient(new HttpClient(handler), new ConsoleLogger(false)),
             new ConsoleLogger(false),
-            "key");
+            "key",
+            cache: new Cache.CacheStore(TestTempDir),
+            useCache: false);
 
         await Assert.ThrowsAsync<InvalidOperationException>(() =>
             client.ResolvePuuid(new RiotId { GameName = "Missing", TagLine = "NA1", Routing = "AMERICAS" }));
@@ -54,7 +57,9 @@ public class RiotClientTests
         var client = new RiotClient(
             new HttpRetryClient(new HttpClient(handler), new ConsoleLogger(false)),
             new ConsoleLogger(false),
-            "key");
+            "key",
+            cache: new Cache.CacheStore(TestTempDir),
+            useCache: false);
 
         await Assert.ThrowsAsync<InvalidOperationException>(() =>
             client.ResolvePuuid(new RiotId { GameName = "Tree Otter", TagLine = "3500", Routing = "AMERICAS" }));
@@ -72,7 +77,9 @@ public class RiotClientTests
         var client = new RiotClient(
             new HttpRetryClient(new HttpClient(handler), new ConsoleLogger(false)),
             new ConsoleLogger(false),
-            "key");
+            "key",
+            cache: new Cache.CacheStore(TestTempDir),
+            useCache: false);
 
         var result = await client.GetMatchDetail("MATCH1", Routing);
 
@@ -93,7 +100,9 @@ public class RiotClientTests
         var client = new RiotClient(
             new HttpRetryClient(new HttpClient(handler), new ConsoleLogger(false)),
             new ConsoleLogger(false),
-            "key");
+            "key",
+            cache: new Cache.CacheStore(TestTempDir),
+            useCache: false);
 
         var ids = await client.ListMatchIds("puuid", Routing, startMs: 0, endMs: 10_000, maxMatches: 3, pageSize: 2);
 
@@ -111,9 +120,47 @@ public class RiotClientTests
         Assert.Equal("1", QueryValue(second, "count"));
     }
 
+    [Fact]
+    public async Task uses_cached_puuid_when_available()
+    {
+        var cache = new Cache.CacheStore(TestTempDir);
+        cache.Write("puuid/AMERICAS_treeotter_3500.json", new RiotAccountDto { Puuid = "cached" });
+
+        var handler = new FakeHandler(new HttpResponseMessage(HttpStatusCode.OK));
+        var client = new RiotClient(
+            new HttpRetryClient(new HttpClient(handler), new ConsoleLogger(false)),
+            new ConsoleLogger(false),
+            "key",
+            cache: cache);
+
+        var puuid = await client.ResolvePuuid(new RiotId { GameName = "treeotter", TagLine = "3500", Routing = "AMERICAS" });
+
+        Assert.Equal("cached", puuid);
+        Assert.Equal(0, handler.RequestCount);
+    }
+
+    [Fact]
+    public async Task uses_cached_match_list_when_available()
+    {
+        var cache = new Cache.CacheStore(TestTempDir);
+        cache.Write("matchLists/AMERICAS_puuid_0_1000_all.json", new List<string> { "m1", "m2" });
+
+        var handler = new QueueHandler(Array.Empty<HttpResponseMessage>());
+        var client = new RiotClient(
+            new HttpRetryClient(new HttpClient(handler), new ConsoleLogger(false)),
+            new ConsoleLogger(false),
+            "key",
+            cache: cache);
+
+        var ids = await client.ListMatchIds("puuid", Routing, 0, 1000);
+        Assert.Equal(new[] { "m1", "m2" }, ids);
+        Assert.Empty(handler.Requests);
+    }
+
     private class FakeHandler : HttpMessageHandler
     {
         private readonly HttpResponseMessage _response;
+        public int RequestCount { get; private set; }
 
         public FakeHandler(HttpResponseMessage response)
         {
@@ -122,6 +169,7 @@ public class RiotClientTests
 
         protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
+            RequestCount++;
             return Task.FromResult(_response);
         }
     }
@@ -154,4 +202,5 @@ public class RiotClientTests
         }
         return null;
     }
+    private static string TestTempDir => Path.Combine(Path.GetTempPath(), "tft-cache-tests");
 }
