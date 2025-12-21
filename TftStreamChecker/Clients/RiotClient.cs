@@ -140,6 +140,17 @@ public class RiotClient
 
     public async Task<MatchDetailDto?> GetMatchDetail(string matchId, string routing, CancellationToken cancellationToken = default)
     {
+        var cacheKey = CacheKeyForMatchDetail(matchId);
+        if (_useCache && _cache != null)
+        {
+            var cached = _cache.Read<MatchDetailDto>(cacheKey);
+            if (cached != null)
+            {
+                _log.Verbose("match detail cache hit for " + matchId);
+                return cached;
+            }
+        }
+
         var uri = $"https://{routing.ToLowerInvariant()}.api.riotgames.com/tft/match/v1/matches/{Uri.EscapeDataString(matchId)}";
 
         var response = await _http.SendAsync(
@@ -158,7 +169,14 @@ public class RiotClient
         }
 
         response.EnsureSuccessStatusCode();
-        return await response.Content.ReadFromJsonAsync<MatchDetailDto>(cancellationToken: cancellationToken);
+        var dto = await response.Content.ReadFromJsonAsync<MatchDetailDto>(cancellationToken: cancellationToken);
+
+        if (_useCache && _cache != null && dto != null)
+        {
+            _cache.Write(cacheKey, dto);
+        }
+
+        return dto;
     }
 
     private static string CacheKeyForPuuid(RiotId riotId)
@@ -171,5 +189,10 @@ public class RiotClient
     {
         var file = $"{routing}_{puuid}_{startMs}_{endMs}_{maxMatches?.ToString() ?? "all"}.json";
         return Path.Combine("matchLists", file);
+    }
+
+    private static string CacheKeyForMatchDetail(string matchId)
+    {
+        return Path.Combine("matches", matchId + ".json");
     }
 }

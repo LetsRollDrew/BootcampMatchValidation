@@ -33,6 +33,25 @@ public class RiotClientTests
     }
 
     [Fact]
+    public async Task caches_match_detail()
+    {
+        var cache = new Cache.CacheStore(TestTempDir);
+        cache.Write("matches/MATCHCACHED.json", new MatchDetailDto { Info = new MatchInfo { GameCreation = 123 } });
+
+        var handler = new QueueHandler(Array.Empty<HttpResponseMessage>());
+        var client = new RiotClient(
+            new HttpRetryClient(new HttpClient(handler), new ConsoleLogger(false)),
+            new ConsoleLogger(false),
+            "key",
+            cache: cache);
+
+        var dto = await client.GetMatchDetail("MATCHCACHED", Routing);
+        Assert.NotNull(dto);
+        Assert.Equal(123, dto!.Info!.GameCreation);
+        Assert.Empty(handler.Requests);
+    }
+
+    [Fact]
     public async Task throws_on_not_found()
     {
         var handler = new FakeHandler(new HttpResponseMessage(HttpStatusCode.NotFound));
