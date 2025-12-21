@@ -4,6 +4,14 @@ using TftStreamChecker.Logging;
 
 namespace TftStreamChecker;
 
+/*************************************************************************
+*
+* TFT Online/Offline Stream Checker
+*
+* Entry point bootstrapper
+*
+* adding CLI parsing and service wiring and execution here later
+************************************************************************/
 public static class Program
 {
     public static int Main(string[] args)
