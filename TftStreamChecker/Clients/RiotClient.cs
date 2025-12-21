@@ -43,4 +43,56 @@ public class RiotClient
             throw new InvalidOperationException("puuid missing from riot response");
         return dto.Puuid;
     }
+
+    public async Task<IReadOnlyList<string>> ListMatchIds(
+        string puuid,
+        string routing,
+        long startMs,
+        long endMs,
+        int? maxMatches = null,
+        int pageSize = 200,
+        CancellationToken cancellationToken = default)
+    {
+        var ids = new List<string>();
+        var start = 0;
+        var clampedPage = Math.Max(1, pageSize);
+        var startSec = startMs / 1000;
+        var endSec = endMs / 1000;
+
+        while (true)
+        {
+            if (maxMatches.HasValue && ids.Count >= maxMatches.Value) break;
+            var remaining = maxMatches.HasValue ? Math.Min(clampedPage, maxMatches.Value - ids.Count) : clampedPage;
+            var uri = BuildIdsUri(puuid, routing, startSec, endSec, start, remaining);
+
+            var response = await _http.SendAsync(
+                () =>
+                {
+                    var request = new HttpRequestMessage(HttpMethod.Get, uri);
+                    request.Headers.Add("X-Riot-Token", _apiKey);
+                    return request;
+                },
+                cancellationToken);
+
+            response.EnsureSuccessStatusCode();
+            var batch = await response.Content.ReadFromJsonAsync<List<string>>(cancellationToken: cancellationToken) ?? new List<string>();
+            ids.AddRange(batch);
+            if (batch.Count < remaining) break;
+            start += remaining;
+        }
+
+        if (maxMatches.HasValue && ids.Count > maxMatches.Value)
+        {
+            ids = ids.Take(maxMatches.Value).ToList();
+        }
+
+        return ids;
+    }
+
+    private static string BuildIdsUri(string puuid, string routing, long startSec, long endSec, int start, int count)
+    {
+        var url = $"https://{routing.ToLowerInvariant()}.api.riotgames.com/tft/match/v1/matches/by-puuid/{Uri.EscapeDataString(puuid)}/ids";
+        var query = $"?startTime={startSec}&endTime={endSec}&start={start}&count={count}";
+        return url + query;
+    }
 }

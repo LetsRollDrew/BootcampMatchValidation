@@ -23,3 +23,7 @@ public class RiotAccountDto
 {
     public string Puuid { get; set; } = string.Empty;
 }
+
+public class MatchIdList : List<string>
+{
+}

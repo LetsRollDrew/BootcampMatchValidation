@@ -10,6 +10,8 @@ namespace TftStreamChecker.Tests;
 
 public class RiotClientTests
 {
+    private const string Routing = "AMERICAS";
+
     [Fact]
     public async Task resolves_puuid()
     {
@@ -58,6 +60,37 @@ public class RiotClientTests
             client.ResolvePuuid(new RiotId { GameName = "Tree Otter", TagLine = "3500", Routing = "AMERICAS" }));
     }
 
+    [Fact]
+    public async Task lists_match_ids_with_paging_and_max()
+    {
+        var responses = new[]
+        {
+            new HttpResponseMessage(HttpStatusCode.OK) { Content = JsonContent.Create(new []{ "m1", "m2" }) },
+            new HttpResponseMessage(HttpStatusCode.OK) { Content = JsonContent.Create(new []{ "m3" }) }
+        };
+
+        var handler = new QueueHandler(responses);
+        var client = new RiotClient(
+            new HttpRetryClient(new HttpClient(handler), new ConsoleLogger(false)),
+            new ConsoleLogger(false),
+            "key");
+
+        var ids = await client.ListMatchIds("puuid", Routing, startMs: 0, endMs: 10_000, maxMatches: 3, pageSize: 2);
+
+        Assert.Equal(new[] { "m1", "m2", "m3" }, ids);
+        Assert.Equal(2, handler.Requests.Count);
+
+        var first = handler.Requests[0].RequestUri!;
+        Assert.Equal("0", QueryValue(first, "start"));
+        Assert.Equal("2", QueryValue(first, "count"));
+        Assert.Equal("0", QueryValue(first, "startTime"));
+        Assert.Equal("10", QueryValue(first, "endTime"));
+
+        var second = handler.Requests[1].RequestUri!;
+        Assert.Equal("2", QueryValue(second, "start"));
+        Assert.Equal("1", QueryValue(second, "count"));
+    }
+
     private class FakeHandler : HttpMessageHandler
     {
         private readonly HttpResponseMessage _response;
@@ -71,5 +104,34 @@ public class RiotClientTests
         {
             return Task.FromResult(_response);
         }
+    }
+
+    private class QueueHandler : HttpMessageHandler
+    {
+        private readonly Queue<HttpResponseMessage> _responses;
+        public List<HttpRequestMessage> Requests { get; } = new();
+
+        public QueueHandler(IEnumerable<HttpResponseMessage> responses)
+        {
+            _responses = new Queue<HttpResponseMessage>(responses);
+        }
+
+        protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+        {
+            Requests.Add(request);
+            if (_responses.Count == 0) throw new InvalidOperationException("no responses queued");
+            return Task.FromResult(_responses.Dequeue());
+        }
+    }
+
+    private static string? QueryValue(Uri uri, string key)
+    {
+        var query = uri.Query.TrimStart('?').Split('&', StringSplitOptions.RemoveEmptyEntries);
+        foreach (var part in query)
+        {
+            var kv = part.Split('=', 2);
+            if (kv.Length == 2 && kv[0] == key) return Uri.UnescapeDataString(kv[1]);
+        }
+        return null;
     }
 }
