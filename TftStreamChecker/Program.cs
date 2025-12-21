@@ -1,6 +1,7 @@
 using TftStreamChecker.Cli;
 using TftStreamChecker.Env;
 using TftStreamChecker.Logging;
+using TftStreamChecker.Parsing;
 
 namespace TftStreamChecker;
 
@@ -30,7 +31,17 @@ public static class Program
             return 1;
         }
 
-        log.Info("riotId: " + (string.IsNullOrWhiteSpace(options.RiotId) ? "(none)" : options.RiotId));
+        try
+        {
+            var riotId = RiotIdParser.Parse(options.RiotId);
+            log.Info("riotId: " + riotId.GameName + "#" + riotId.TagLine + $" ({riotId.Routing})");
+        }
+        catch (Exception ex)
+        {
+            log.Error(ex.Message);
+            return 1;
+        }
+
         log.Info("twitch: " + (string.IsNullOrWhiteSpace(options.TwitchLogin) ? "(none)" : options.TwitchLogin));
         log.Info("days: " + options.Days);
         log.Info("startTime: " + (options.StartTime ?? "(none)"));
