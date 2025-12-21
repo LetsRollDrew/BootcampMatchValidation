@@ -18,3 +18,8 @@ public class VodInterval
 public class Participant
 {
 }
+
+public class RiotAccountDto
+{
+    public string Puuid { get; set; } = string.Empty;
+}
