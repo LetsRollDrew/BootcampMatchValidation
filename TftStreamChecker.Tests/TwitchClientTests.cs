@@ -112,6 +112,46 @@ public class TwitchClientTests
         Assert.Contains("Authorization", req.Headers.Select(h => h.Key));
     }
 
+    [Fact]
+    public async Task parses_durations_and_filters_vods()
+    {
+        var handler = new QueueHandler(
+            new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = JsonContent.Create(new TwitchTokenResponse
+                {
+                    AccessToken = "token1",
+                    ExpiresIn = 3600
+                })
+            },
+            new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = JsonContent.Create(new TwitchVideosResponse
+                {
+                    Data = new List<TwitchVideoDto>
+                    {
+                        new TwitchVideoDto { Id = "1", CreatedAt = "2023-12-01T00:00:00Z", Duration = "1h" },
+                        new TwitchVideoDto { Id = "2", CreatedAt = "2023-12-05T00:00:00Z", Duration = "30m" }
+                    }
+                })
+            });
+
+        var client = new TwitchClient(
+            new HttpRetryClient(new HttpClient(handler), new ConsoleLogger(false)),
+            new ConsoleLogger(false),
+            "id",
+            "secret");
+
+        var start = new DateTimeOffset(2023, 12, 2, 0, 0, 0, TimeSpan.Zero).ToUnixTimeMilliseconds();
+        var end = new DateTimeOffset(2023, 12, 6, 0, 0, 0, TimeSpan.Zero).ToUnixTimeMilliseconds();
+
+        var vods = await client.ListVodIntervals("123", start, end, bufferHours: 0);
+
+        Assert.Single(vods);
+        Assert.Equal("2", vods[0].Id);
+        Assert.Equal(2, handler.Requests.Count);
+    }
+
     private class QueueHandler : HttpMessageHandler
     {
         private readonly Queue<HttpResponseMessage> _responses;

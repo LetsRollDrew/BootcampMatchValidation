@@ -72,4 +72,93 @@ public class TwitchClient
             throw new InvalidOperationException("twitch user not found for login " + login);
         return user;
     }
+
+    public async Task<IReadOnlyList<VodInterval>> ListVodIntervals(
+        string userId,
+        long windowStartMs,
+        long windowEndMs,
+        double bufferHours,
+        CancellationToken cancellationToken = default)
+    {
+        var token = await GetAppToken(cancellationToken);
+        var cursor = (string?)null;
+        var vods = new List<VodInterval>();
+        var bufferMs = (long)(bufferHours * 3600 * 1000);
+
+        while (true)
+        {
+            var uri = $"https://api.twitch.tv/helix/videos?user_id={Uri.EscapeDataString(userId)}&type=archive&first=100";
+            if (!string.IsNullOrEmpty(cursor))
+            {
+                uri += "&after=" + Uri.EscapeDataString(cursor);
+            }
+
+            var response = await _http.SendAsync(
+                () =>
+                {
+                    var request = new HttpRequestMessage(HttpMethod.Get, uri);
+                    request.Headers.Add("Client-ID", _clientId);
+                    request.Headers.Add("Authorization", "Bearer " + token);
+                    return request;
+                },
+                cancellationToken);
+
+            response.EnsureSuccessStatusCode();
+            var payload = await response.Content.ReadFromJsonAsync<TwitchVideosResponse>(cancellationToken: cancellationToken);
+            if (payload == null) break;
+
+            foreach (var vod in payload.Data)
+            {
+                var startMs = DateTimeOffset.Parse(vod.CreatedAt).ToUnixTimeMilliseconds();
+                var durationSec = ParseDuration(vod.Duration);
+                var endMs = startMs + durationSec * 1000;
+                var intersects = endMs >= windowStartMs - bufferMs && startMs <= windowEndMs + bufferMs;
+                if (intersects)
+                {
+                    vods.Add(new VodInterval
+                    {
+                        Id = vod.Id ?? string.Empty,
+                        StartMs = startMs,
+                        EndMs = endMs
+                    });
+                }
+            }
+
+            cursor = payload.Pagination?.Cursor;
+            if (string.IsNullOrEmpty(cursor)) break;
+        }
+
+        vods.Sort((a, b) => a.StartMs.CompareTo(b.StartMs));
+        return vods;
+    }
+
+    public static int ParseDuration(string duration)
+    {
+        // twitch duration like 1h2m3s
+        var total = 0;
+        var number = 0;
+        foreach (var c in duration)
+        {
+            if (char.IsDigit(c))
+            {
+                number = number * 10 + (c - '0');
+                continue;
+            }
+
+            if (c == 'h')
+            {
+                total += number * 3600;
+            }
+            else if (c == 'm')
+            {
+                total += number * 60;
+            }
+            else if (c == 's')
+            {
+                total += number;
+            }
+            number = 0;
+        }
+        return total;
+    }
 }

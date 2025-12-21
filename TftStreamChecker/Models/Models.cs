@@ -19,6 +19,9 @@ public class MatchSummary
 
 public class VodInterval
 {
+    public string Id { get; set; } = string.Empty;
+    public long StartMs { get; set; }
+    public long EndMs { get; set; }
 }
 
 public class Participant
@@ -68,4 +71,22 @@ public class TwitchUserDto
     public string Id { get; set; } = string.Empty;
     public string Login { get; set; } = string.Empty;
     public string DisplayName { get; set; } = string.Empty;
+}
+
+public class TwitchVideosResponse
+{
+    public List<TwitchVideoDto> Data { get; set; } = new();
+    public TwitchPaginationDto? Pagination { get; set; }
+}
+
+public class TwitchVideoDto
+{
+    public string? Id { get; set; }
+    public string Duration { get; set; } = string.Empty;
+    public string CreatedAt { get; set; } = string.Empty;
+}
+
+public class TwitchPaginationDto
+{
+    public string? Cursor { get; set; }
 }
