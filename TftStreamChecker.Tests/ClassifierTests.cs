@@ -20,7 +20,7 @@ public class ClassifierTests
             new() { Id = "v1", StartMs = 0, EndMs = 1500 }
         };
 
-        var stats = Classifier.Classify(matches, vods, bufferHours: 0.001, threshold: 0.5);
+        var stats = Classifier.Classify(matches, vods, bufferHours: 0.001, threshold: 0.6);
 
         Assert.Equal(1, stats.OnStream);
         Assert.Equal(1, stats.OffStream);

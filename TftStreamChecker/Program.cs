@@ -111,6 +111,7 @@ public static class Program
 
         var stats = Classifier.Classify(summaries, vods, defaultBufferHours, options.Threshold);
         SummaryPrinter.Print(options.RiotId, riotId, options.TwitchLogin, stats, options.Threshold);
+        CsvWriter.Append(options.OutputCsv ?? string.Empty, options.RiotId, riotId, options.TwitchLogin, stats);
     }
 
     private static string Mask(string value)

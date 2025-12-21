@@ -12,6 +12,7 @@ public class CliOptions
     public string? EventEnd { get; init; }
     public double Threshold { get; init; } = 0.5;
     public bool Verbose { get; init; }
+    public string? OutputCsv { get; init; } = "output/stream-check.csv";
 
     public static CliOptions Parse(string[] args)
     {
@@ -25,6 +26,7 @@ public class CliOptions
         string? eventEnd = null;
         double threshold = 0.5;
         var verbose = false;
+        string? outputCsv = "output/stream-check.csv";
 
         for (var i = 0; i < args.Length; i++)
         {
@@ -81,6 +83,10 @@ public class CliOptions
                 case "--verbose":
                     verbose = true;
                     break;
+                case "--outputCsv":
+                    outputCsv = Next();
+                    i++;
+                    break;
             }
         }
 
@@ -95,7 +101,8 @@ public class CliOptions
             EventStart = eventStart,
             EventEnd = eventEnd,
             Threshold = threshold,
-            Verbose = verbose
+            Verbose = verbose,
+            OutputCsv = outputCsv
         };
     }
 }
