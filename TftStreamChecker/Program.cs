@@ -1,4 +1,5 @@
 using TftStreamChecker.Cli;
+using TftStreamChecker.Env;
 
 namespace TftStreamChecker;
 
@@ -12,10 +13,21 @@ namespace TftStreamChecker;
 ************************************************************************/
 public static class Program
 {
-    public static void Main(string[] args)
+    public static int Main(string[] args)
     {
-        // just regurgitating to check parsing
         var options = CliOptions.Parse(args);
+        EnvConfig env;
+
+        try
+        {
+            env = EnvLoader.Load();
+        }
+        catch (Exception ex)
+        {
+            Console.Error.WriteLine(ex.Message);
+            return 1;
+        }
+
         Console.WriteLine("riotId: " + (string.IsNullOrWhiteSpace(options.RiotId) ? "(none)" : options.RiotId));
         Console.WriteLine("twitch: " + (string.IsNullOrWhiteSpace(options.TwitchLogin) ? "(none)" : options.TwitchLogin));
         Console.WriteLine("days: " + options.Days);
@@ -25,5 +37,13 @@ public static class Program
         Console.WriteLine("eventStart: " + (options.EventStart ?? "(none)"));
         Console.WriteLine("eventEnd: " + (options.EventEnd ?? "(none)"));
         Console.WriteLine("threshold: " + options.Threshold);
+        return 0;
+    }
+
+    private static string Mask(string value)
+    {
+        if (string.IsNullOrEmpty(value)) return "(missing)";
+        if (value.Length <= 4) return new string('*', value.Length);
+        return new string('*', value.Length - 4) + value[^4..];
     }
 }
