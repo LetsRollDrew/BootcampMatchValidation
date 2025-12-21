@@ -95,4 +95,27 @@ public class RiotClient
         var query = $"?startTime={startSec}&endTime={endSec}&start={start}&count={count}";
         return url + query;
     }
+
+    public async Task<MatchDetailDto?> GetMatchDetail(string matchId, string routing, CancellationToken cancellationToken = default)
+    {
+        var uri = $"https://{routing.ToLowerInvariant()}.api.riotgames.com/tft/match/v1/matches/{Uri.EscapeDataString(matchId)}";
+
+        var response = await _http.SendAsync(
+            () =>
+            {
+                var request = new HttpRequestMessage(HttpMethod.Get, uri);
+                request.Headers.Add("X-Riot-Token", _apiKey);
+                return request;
+            },
+            cancellationToken);
+
+        if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+        {
+            _log.Verbose("match not found: " + matchId);
+            return null;
+        }
+
+        response.EnsureSuccessStatusCode();
+        return await response.Content.ReadFromJsonAsync<MatchDetailDto>(cancellationToken: cancellationToken);
+    }
 }

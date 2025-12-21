@@ -61,6 +61,26 @@ public class RiotClientTests
     }
 
     [Fact]
+    public async Task fetches_match_detail()
+    {
+        var dto = new MatchDetailDto { Info = new MatchInfo { GameCreation = 1_700_000_000 } };
+        var handler = new FakeHandler(new HttpResponseMessage(HttpStatusCode.OK)
+        {
+            Content = JsonContent.Create(dto)
+        });
+
+        var client = new RiotClient(
+            new HttpRetryClient(new HttpClient(handler), new ConsoleLogger(false)),
+            new ConsoleLogger(false),
+            "key");
+
+        var result = await client.GetMatchDetail("MATCH1", Routing);
+
+        Assert.NotNull(result);
+        Assert.Equal(dto.Info!.GameCreation, result!.Info!.GameCreation);
+    }
+
+    [Fact]
     public async Task lists_match_ids_with_paging_and_max()
     {
         var responses = new[]
