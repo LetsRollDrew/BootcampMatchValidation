@@ -2,6 +2,12 @@ using TftStreamChecker.Cli;
 using TftStreamChecker.Env;
 using TftStreamChecker.Logging;
 using TftStreamChecker.Parsing;
+using TftStreamChecker.Time;
+using TftStreamChecker.Http;
+using TftStreamChecker.Clients;
+using TftStreamChecker.Models;
+using TftStreamChecker.Classification;
+using TftStreamChecker.Output;
 
 namespace TftStreamChecker;
 
@@ -31,9 +37,10 @@ public static class Program
             return 1;
         }
 
+        RiotId riotId;
         try
         {
-            var riotId = RiotIdParser.Parse(options.RiotId);
+            riotId = RiotIdParser.Parse(options.RiotId);
             log.Info("riotId: " + riotId.GameName + "#" + riotId.TagLine + $" ({riotId.Routing})");
         }
         catch (Exception ex)
@@ -50,10 +57,60 @@ public static class Program
         log.Info("eventStart: " + (options.EventStart ?? "(none)"));
         log.Info("eventEnd: " + (options.EventEnd ?? "(none)"));
         log.Info("threshold: " + options.Threshold);
-        log.Verbose("env riot: " + Mask(env.RiotApiKey));
-        log.Verbose("env twitch id: " + Mask(env.TwitchClientId));
-        log.Verbose("env twitch secret: " + Mask(env.TwitchClientSecret));
+
+        var window = WindowResolver.Resolve(options);
+        if (options.Verbose)
+        {
+            log.Info("window start: " + new DateTimeOffset(window.StartMs, TimeSpan.Zero).ToString("O"));
+            log.Info("window end: " + new DateTimeOffset(window.EndMs, TimeSpan.Zero).ToString("O"));
+            log.Info("env riot: " + Mask(env.RiotApiKey));
+            log.Info("env twitch id: " + Mask(env.TwitchClientId));
+            log.Info("env twitch secret: " + Mask(env.TwitchClientSecret));
+        }
+
+        try
+        {
+            RunSingle(options, env, riotId, window, log).GetAwaiter().GetResult();
+        }
+        catch (Exception ex)
+        {
+            log.Error(ex.Message);
+            return 1;
+        }
+
         return 0;
+    }
+
+    private static async Task RunSingle(
+        CliOptions options,
+        EnvConfig env,
+        RiotId riotId,
+        ResolvedWindow window,
+        ConsoleLogger log)
+    {
+        const double defaultBufferHours = 10.0 / 60.0;
+
+        using var httpClient = new HttpClient();
+        var retry = new HttpRetryClient(httpClient, log);
+        var riot = new RiotClient(retry, log, env.RiotApiKey);
+        var twitch = new TwitchClient(retry, log, env.TwitchClientId, env.TwitchClientSecret);
+
+        var puuid = await riot.ResolvePuuid(riotId);
+        var matchIds = await riot.ListMatchIds(puuid, riotId.Routing, window.StartMs, window.EndMs);
+
+        var summaries = new List<MatchSummary>();
+        foreach (var id in matchIds)
+        {
+            var detail = await riot.GetMatchDetail(id, riotId.Routing);
+            var summary = MatchNormalizer.ToSummary(id, detail);
+            if (summary != null) summaries.Add(summary);
+        }
+
+        var user = await twitch.GetUserByLogin(options.TwitchLogin);
+        var vods = await twitch.ListVodIntervals(user.Id, window.StartMs, window.EndMs, defaultBufferHours);
+
+        var stats = Classifier.Classify(summaries, vods, defaultBufferHours, options.Threshold);
+        SummaryPrinter.Print(options.RiotId, riotId, options.TwitchLogin, stats, options.Threshold);
     }
 
     private static string Mask(string value)
