@@ -144,7 +144,19 @@ public static class Program
             return;
         }
 
-        var puuid = await riot.ResolvePuuid(riotId);
+        string puuid;
+        try
+        {
+            puuid = await riot.ResolvePuuid(riotId);
+        }
+        catch (InvalidOperationException ex) when (ex.Message.Contains("riot id not found", StringComparison.OrdinalIgnoreCase))
+        {
+            var displayName = participant.Name ?? (riotId.GameName + "#" + riotId.TagLine);
+            LogNameChanged(displayName, riotId, twitchLogin);
+            var zeroStats = new MatchStats();
+            CsvWriter.Append(options.OutputCsv ?? string.Empty, displayName, riotId, twitchLogin, zeroStats, "Name Changed");
+            return;
+        }
         var matchIds = await riot.ListMatchIds(puuid, riotId.Routing, participantWindow.Value.StartMs, participantWindow.Value.EndMs);
 
         var summaries = new List<MatchSummary>();
@@ -176,6 +188,13 @@ public static class Program
             if (segments.Length > 0) return segments[0];
         }
         return string.Empty;
+    }
+
+    private static void LogNameChanged(string name, RiotId riotId, string twitchLogin)
+    {
+        Console.WriteLine($"=== {name} ({riotId.GameName}#{riotId.TagLine}) twitch:{twitchLogin} ===");
+        Console.WriteLine("Result: Name Changed (Riot ID not found)");
+        Console.WriteLine("");
     }
 
     private static (long StartMs, long EndMs)? BuildParticipantWindow(Participant participant, ResolvedWindow baseWindow)

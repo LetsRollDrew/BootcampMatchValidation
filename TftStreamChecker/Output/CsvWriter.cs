@@ -21,7 +21,7 @@ public static class CsvWriter
         "Result"
     };
 
-    public static void Append(string path, string name, RiotId riotId, string twitch, MatchStats stats)
+    public static void Append(string path, string name, RiotId riotId, string twitch, MatchStats stats, string? resultOverride = null)
     {
         if (string.IsNullOrWhiteSpace(path)) return;
 
@@ -44,7 +44,7 @@ public static class CsvWriter
             stats.Unknown,
             Escape(FormatPercent(stats.PctKnown)),
             Escape(FormatPercent(stats.PctTotal)),
-            Escape(stats.Pass ? "PASS" : "FAIL"));
+            Escape(resultOverride ?? (stats.Pass ? "PASS" : "FAIL")));
 
         using var writer = new StreamWriter(fullPath, append: true, Encoding.UTF8);
         if (needsHeader)

@@ -26,7 +26,7 @@ public class CsvWriterTests
             };
 
             CsvWriter.Append(path, "Tree Otter", riotId, "treeotter", stats);
-            CsvWriter.Append(path, "Tree Otter", riotId, "treeotter", stats);
+            CsvWriter.Append(path, "Tree Otter", riotId, "treeotter", stats, "Name Changed");
 
             var lines = File.ReadAllLines(path, Encoding.UTF8);
             Assert.Equal(3, lines.Length); // header + 2 rows
