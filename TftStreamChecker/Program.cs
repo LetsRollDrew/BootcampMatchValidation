@@ -108,12 +108,13 @@ public static class Program
                 .ToList();
             foreach (var participant in sorted)
             {
-                await ProcessOne(options, env, riot, twitch, window, log, participant.Name ?? "(unknown)", participant.RankUrl, participant.Socials);
+                await ProcessOne(options, env, riot, twitch, window, log, participant);
             }
             return;
         }
 
-        await ProcessOne(options, env, riot, twitch, window, log, options.RiotId, null, null);
+        var single = new Participant { Name = options.RiotId };
+        await ProcessOne(options, env, riot, twitch, window, log, single);
     }
 
     private static async Task ProcessOne(
@@ -123,17 +124,28 @@ public static class Program
         TwitchClient twitch,
         ResolvedWindow window,
         ConsoleLogger log,
-        string name,
-        string? rankUrl,
-        List<Social>? socials)
+        Participant participant)
     {
-        var riotId = RiotIdParser.Parse(rankUrl ?? options.RiotId);
+        var riotId = RiotIdParser.Parse(participant.RankUrl ?? options.RiotId);
         var twitchLogin = string.IsNullOrWhiteSpace(options.TwitchLogin)
-            ? ExtractTwitchLogin(socials)
+            ? ExtractTwitchLogin(participant.Socials)
             : options.TwitchLogin;
 
+        var participantWindow = BuildParticipantWindow(participant, window);
+        if (participantWindow == null)
+        {
+            log.Info("SKIP " + (participant.Name ?? "(unknown)") + ": window excluded by elimination");
+            return;
+        }
+
+        if (string.IsNullOrWhiteSpace(twitchLogin))
+        {
+            log.Info("SKIP " + (participant.Name ?? "(unknown)") + ": missing twitch login");
+            return;
+        }
+
         var puuid = await riot.ResolvePuuid(riotId);
-        var matchIds = await riot.ListMatchIds(puuid, riotId.Routing, window.StartMs, window.EndMs);
+        var matchIds = await riot.ListMatchIds(puuid, riotId.Routing, participantWindow.Value.StartMs, participantWindow.Value.EndMs);
 
         var summaries = new List<MatchSummary>();
         foreach (var id in matchIds)
@@ -144,11 +156,12 @@ public static class Program
         }
 
         var user = await twitch.GetUserByLogin(twitchLogin);
-        var vods = await twitch.ListVodIntervals(user.Id, window.StartMs, window.EndMs, defaultBufferHours);
+        var vods = await twitch.ListVodIntervals(user.Id, participantWindow.Value.StartMs, participantWindow.Value.EndMs, defaultBufferHours);
 
         var stats = Classifier.Classify(summaries, vods, defaultBufferHours, options.Threshold);
-        SummaryPrinter.Print(name, riotId, twitchLogin, stats, options.Threshold);
-        CsvWriter.Append(options.OutputCsv ?? string.Empty, name, riotId, twitchLogin, stats);
+        var displayName = participant.Name ?? (riotId.GameName + "#" + riotId.TagLine);
+        SummaryPrinter.Print(displayName, riotId, twitchLogin, stats, options.Threshold);
+        CsvWriter.Append(options.OutputCsv ?? string.Empty, displayName, riotId, twitchLogin, stats);
     }
 
     private static string ExtractTwitchLogin(List<Social>? socials)
@@ -163,6 +176,25 @@ public static class Program
             if (segments.Length > 0) return segments[0];
         }
         return string.Empty;
+    }
+
+    private static (long StartMs, long EndMs)? BuildParticipantWindow(Participant participant, ResolvedWindow baseWindow)
+    {
+        var start = Math.Max(baseWindow.StartMs, baseWindow.EventStartMs);
+        var end = baseWindow.EndMs;
+        if (baseWindow.EventEndMs.HasValue)
+        {
+            end = Math.Min(end, baseWindow.EventEndMs.Value);
+        }
+
+        if (participant.Eliminated == true && participant.DayEliminated.HasValue && participant.DayEliminated.Value > 0)
+        {
+            var elimEnd = baseWindow.EventStartMs + participant.DayEliminated.Value * 86_400_000L - 1;
+            end = Math.Min(end, elimEnd);
+        }
+
+        if (end <= start) return null;
+        return (start, end);
     }
 
     private static string Mask(string value)
