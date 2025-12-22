@@ -26,6 +26,12 @@ public class VodInterval
 
 public class Participant
 {
+    public string? Name { get; set; }
+    public double? Rank { get; set; }
+    public List<Social>? Socials { get; set; }
+    public string? RankUrl { get; set; }
+    public bool? Eliminated { get; set; }
+    public int? DayEliminated { get; set; }
 }
 
 public class RiotAccountDto
@@ -89,6 +95,11 @@ public class TwitchVideoDto
 public class TwitchPaginationDto
 {
     public string? Cursor { get; set; }
+}
+
+public class Social
+{
+    public string? LinkUri { get; set; }
 }
 
 public class MatchStats

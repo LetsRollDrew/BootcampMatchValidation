@@ -14,6 +14,7 @@ public class CliOptions
     public bool Verbose { get; init; }
     public string? OutputCsv { get; init; } = "output/stream-check.csv";
     public bool UseCache { get; init; } = true;
+    public string? InputPath { get; init; }
 
     public static CliOptions Parse(string[] args)
     {
@@ -29,6 +30,7 @@ public class CliOptions
         var verbose = false;
         string? outputCsv = "output/stream-check.csv";
         var useCache = true;
+        string? inputPath = null;
 
         for (var i = 0; i < args.Length; i++)
         {
@@ -92,6 +94,10 @@ public class CliOptions
                 case "--noCache":
                     useCache = false;
                     break;
+                case "--input":
+                    inputPath = Next();
+                    i++;
+                    break;
             }
         }
 
@@ -108,7 +114,8 @@ public class CliOptions
             Threshold = threshold,
             Verbose = verbose,
             OutputCsv = outputCsv,
-            UseCache = useCache
+            UseCache = useCache,
+            InputPath = inputPath
         };
     }
 }
