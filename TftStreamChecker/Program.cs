@@ -90,8 +90,6 @@ public static class Program
         ResolvedWindow window,
         ConsoleLogger log)
     {
-        const double defaultBufferHours = 10.0 / 60.0;
-
         using var httpClient = new HttpClient();
         var retry = new HttpRetryClient(httpClient, log);
         var cache = new CacheStore();
@@ -126,6 +124,8 @@ public static class Program
         ConsoleLogger log,
         Participant participant)
     {
+        const double defaultBufferHours = 10.0 / 60.0;
+
         var riotId = RiotIdParser.Parse(participant.RankUrl ?? options.RiotId);
         var twitchLogin = string.IsNullOrWhiteSpace(options.TwitchLogin)
             ? ExtractTwitchLogin(participant.Socials)
@@ -159,21 +159,20 @@ public static class Program
         }
         var matchIds = await riot.ListMatchIds(puuid, riotId.Routing, participantWindow.Value.StartMs, participantWindow.Value.EndMs);
 
-        var summaries = new List<MatchSummary>();
-        foreach (var id in matchIds)
+        var summaries = await AsyncMap(matchIds, Math.Max(1, options.Concurrency), async id =>
         {
             var detail = await riot.GetMatchDetail(id, riotId.Routing);
-            var summary = MatchNormalizer.ToSummary(id, detail);
-            if (summary != null) summaries.Add(summary);
-        }
+            return MatchNormalizer.ToSummary(id, detail);
+        });
+        var summariesFiltered = summaries.Where(s => s != null).Cast<MatchSummary>().ToList();
 
         var user = await twitch.GetUserByLogin(twitchLogin);
         var vods = await twitch.ListVodIntervals(user.Id, participantWindow.Value.StartMs, participantWindow.Value.EndMs, defaultBufferHours);
 
-        var stats = Classifier.Classify(summaries, vods, defaultBufferHours, options.Threshold);
-        var displayName = participant.Name ?? (riotId.GameName + "#" + riotId.TagLine);
-        SummaryPrinter.Print(displayName, riotId, twitchLogin, stats, options.Threshold);
-        CsvWriter.Append(options.OutputCsv ?? string.Empty, displayName, riotId, twitchLogin, stats);
+        var stats = Classifier.Classify(summariesFiltered, vods, defaultBufferHours, options.Threshold);
+        var displayNameFinal = participant.Name ?? (riotId.GameName + "#" + riotId.TagLine);
+        SummaryPrinter.Print(displayNameFinal, riotId, twitchLogin, stats, options.Threshold);
+        CsvWriter.Append(options.OutputCsv ?? string.Empty, displayNameFinal, riotId, twitchLogin, stats);
     }
 
     private static string ExtractTwitchLogin(List<Social>? socials)
@@ -214,6 +213,32 @@ public static class Program
 
         if (end <= start) return null;
         return (start, end);
+    }
+
+    private static async Task<List<T>> AsyncMap<T>(IReadOnlyList<string> items, int concurrency, Func<string, Task<T>> func)
+    {
+        var results = new T[items.Count];
+        using var sem = new SemaphoreSlim(concurrency);
+        var tasks = new List<Task>();
+        for (var i = 0; i < items.Count; i++)
+        {
+            var index = i;
+            await sem.WaitAsync();
+            tasks.Add(Task.Run(async () =>
+            {
+                try
+                {
+                    results[index] = await func(items[index]);
+                }
+                finally
+                {
+                    sem.Release();
+                }
+            }));
+        }
+
+        await Task.WhenAll(tasks);
+        return results.ToList();
     }
 
     private static string Mask(string value)

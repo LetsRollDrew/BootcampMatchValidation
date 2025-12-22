@@ -15,6 +15,7 @@ public class CliOptions
     public string? OutputCsv { get; init; } = "output/stream-check.csv";
     public bool UseCache { get; init; } = true;
     public string? InputPath { get; init; }
+    public int Concurrency { get; init; } = 1;
 
     public static CliOptions Parse(string[] args)
     {
@@ -31,6 +32,7 @@ public class CliOptions
         string? outputCsv = "output/stream-check.csv";
         var useCache = true;
         string? inputPath = null;
+        var concurrency = 1;
 
         for (var i = 0; i < args.Length; i++)
         {
@@ -98,6 +100,13 @@ public class CliOptions
                     inputPath = Next();
                     i++;
                     break;
+                case "--concurrency":
+                    if (int.TryParse(Next(), out var parsedConc))
+                    {
+                        concurrency = parsedConc;
+                    }
+                    i++;
+                    break;
             }
         }
 
@@ -115,7 +124,8 @@ public class CliOptions
             Verbose = verbose,
             OutputCsv = outputCsv,
             UseCache = useCache,
-            InputPath = inputPath
+            InputPath = inputPath,
+            Concurrency = concurrency
         };
     }
 }
