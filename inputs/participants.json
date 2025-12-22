@@ -1,0 +1,2649 @@
+{
+  "RankUpdatedText": "12/20/2025 8:12 AM",
+  "EliminationsActive": false,
+  "NextElimTime": "2025-12-16T06:05:00Z",
+  "Eliminating": false,
+  "Updating": false,
+  "Participants": [
+    {
+      "Team": "entertainer",
+      "Rank": 1,
+      "Name": "KITSURAVT",
+      "Eliminated": false,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 2,
+      "HP": 1,
+      "RankTitle": "Master",
+      "RankTier": "167 LP",
+      "RankLP": 167,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/a34fc06a-7999-4711-b6bd-b50409db5cc3-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/KITSURAVT"
+        }
+      ],
+      "GamesPlayed": 357,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Duchess of Deer-yuri"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 2,
+      "Name": "SABS",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 14,
+      "HP": 0,
+      "RankTitle": "Master",
+      "RankTier": "60 LP",
+      "RankLP": 60,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/77398e63-5977-4259-9688-b9aa8dfc9e8c-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/SABS"
+        }
+      ],
+      "GamesPlayed": 266,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Sabs-rose"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 3,
+      "Name": "SHIPHTUR",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 14,
+      "HP": 0,
+      "RankTitle": "Master",
+      "RankTier": "33 LP",
+      "RankLP": 33,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/5bfa6e89-9f28-483d-8938-934403281d7e-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/SHIPHTUR"
+        }
+      ],
+      "GamesPlayed": 226,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Shiphtur-chap"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 4,
+      "Name": "JEYRAIDENT",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 14,
+      "HP": 0,
+      "RankTitle": "Diamond",
+      "RankTier": "II",
+      "RankLP": 59,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/a6db0956-bec0-4b6e-a1cc-a2a9cd11365e-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/JEYRAIDENT"
+        }
+      ],
+      "GamesPlayed": 151,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Jeyraident-6969"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 5,
+      "Name": "XANDERZUBU",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 13,
+      "HP": 0,
+      "RankTitle": "Diamond",
+      "RankTier": "II",
+      "RankLP": 45,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/5defc7d4-e932-4375-a5a4-4f02abb0a01f-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/XANDERZUBU"
+        }
+      ],
+      "GamesPlayed": 208,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/myloadis-crked"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 6,
+      "Name": "CHIBIMIHARU",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 13,
+      "HP": 0,
+      "RankTitle": "Diamond",
+      "RankTier": "II",
+      "RankLP": 20,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/738d6005-6fc3-4809-9ff9-bbe21b62fcb7-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/CHIBIMIHARU"
+        }
+      ],
+      "GamesPlayed": 210,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/ChibiMiharu-0405"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 7,
+      "Name": "VOYIX64",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 13,
+      "HP": 0,
+      "RankTitle": "Diamond",
+      "RankTier": "III",
+      "RankLP": 25,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/a2b2c56d-d12c-4e26-ae40-de2c6196a4bd-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/VOYIX64"
+        }
+      ],
+      "GamesPlayed": 133,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/voyix-NA1"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 8,
+      "Name": "KARIYU",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 13,
+      "HP": 0,
+      "RankTitle": "Diamond",
+      "RankTier": "III",
+      "RankLP": 0,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/06fd937f-150c-409e-890a-cac26ff7f017-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/KARIYU"
+        }
+      ],
+      "GamesPlayed": 300,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Kariyu-2889"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 9,
+      "Name": "ROHANGOD",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 12,
+      "HP": 0,
+      "RankTitle": "Diamond",
+      "RankTier": "IV",
+      "RankLP": 75,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/27726e52-10f3-4d2b-94a7-0034c3e5b222-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/ROHANGOD"
+        }
+      ],
+      "GamesPlayed": 320,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/rohan-god"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 10,
+      "Name": "SCRAPIE",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 12,
+      "HP": 0,
+      "RankTitle": "Diamond",
+      "RankTier": "IV",
+      "RankLP": 75,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/a3960d56-8d00-4d88-85a6-f2fea4115ea6-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/SCRAPIE"
+        }
+      ],
+      "GamesPlayed": 114,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Scrapie-god"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 11,
+      "Name": "MYRDINTV",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 12,
+      "HP": 0,
+      "RankTitle": "Diamond",
+      "RankTier": "IV",
+      "RankLP": 50,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/b99deacd-d0d7-4b46-add5-137517e463a1-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/MYRDINTV"
+        }
+      ],
+      "GamesPlayed": 180,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Myrdin-NA1"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 12,
+      "Name": "DARGIE1",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 12,
+      "HP": 0,
+      "RankTitle": "Diamond",
+      "RankTier": "IV",
+      "RankLP": 27,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/0d8186c2-5229-4d3a-8b90-43ae8c68c479-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/DARGIE1"
+        }
+      ],
+      "GamesPlayed": 264,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Dargie1-111"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 13,
+      "Name": "YUWUKINE",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 12,
+      "HP": 0,
+      "RankTitle": "Diamond",
+      "RankTier": "IV",
+      "RankLP": 26,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/5f8b4cf6-0f03-4487-b7f2-6f838199280e-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/YUWUKINE"
+        }
+      ],
+      "GamesPlayed": 241,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/yukine-owo"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 14,
+      "Name": "SICKDEGENERATE",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 12,
+      "HP": 0,
+      "RankTitle": "Diamond",
+      "RankTier": "IV",
+      "RankLP": 22,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/227a96df-c62c-496c-8120-8e03c2c0920f-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/SICKDEGENERATE"
+        }
+      ],
+      "GamesPlayed": 209,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/DoctorDinoNinja-TTV"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 15,
+      "Name": "NEBOKERU",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 12,
+      "HP": 0,
+      "RankTitle": "Diamond",
+      "RankTier": "IV",
+      "RankLP": 0,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/48cd738c-945d-4db7-82b6-db8d82143f72-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/NEBOKERU"
+        }
+      ],
+      "GamesPlayed": 315,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Nebokeru-NA1"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 16,
+      "Name": "NYXIE",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 12,
+      "HP": 0,
+      "RankTitle": "Diamond",
+      "RankTier": "IV",
+      "RankLP": 0,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/bb87a079-4f92-4ad2-8189-4517c514e5f3-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/NYXIE"
+        }
+      ],
+      "GamesPlayed": 149,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Nyxiena-NYX"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 17,
+      "Name": "ROYCHIATO",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 12,
+      "HP": 0,
+      "RankTitle": "Diamond",
+      "RankTier": "IV",
+      "RankLP": 0,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/96d26ce8-b6e2-43a8-94ae-2dac66576519-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/ROYCHIATO"
+        }
+      ],
+      "GamesPlayed": 262,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/roychiato-3917"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 18,
+      "Name": "YOONAHKORN",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 12,
+      "HP": 0,
+      "RankTitle": "Diamond",
+      "RankTier": "IV",
+      "RankLP": 0,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/50524ed3-8928-4442-888f-be2ce6e3c088-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/YOONAHKORN"
+        }
+      ],
+      "GamesPlayed": 258,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Yoonahkorn-NA1"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 19,
+      "Name": "BTWBLUE",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 12,
+      "HP": 0,
+      "RankTitle": "Emerald",
+      "RankTier": "II",
+      "RankLP": 75,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/cbb80b62-1401-40ca-ae58-f569aa781781-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/BTWBLUE"
+        }
+      ],
+      "GamesPlayed": 131,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/btwblue-0420"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 20,
+      "Name": "HAPPYKOOW",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 12,
+      "HP": 0,
+      "RankTitle": "Emerald",
+      "RankTier": "III",
+      "RankLP": 58,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/bca32aeb-5650-426c-a082-40973a0fca16-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/HAPPYKOOW"
+        }
+      ],
+      "GamesPlayed": 307,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/madge-koow"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 21,
+      "Name": "ICONJT",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 12,
+      "HP": 0,
+      "RankTitle": "Emerald",
+      "RankTier": "IV",
+      "RankLP": 20,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/a6975f11-738c-439c-87b2-f257aa8dc8c5-profile_image-300x300.jpeg",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/ICONJT"
+        }
+      ],
+      "GamesPlayed": 266,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/IconJT-0000"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 22,
+      "Name": "SHUGIISHUGII",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 11,
+      "HP": 0,
+      "RankTitle": "Diamond",
+      "RankTier": "IV",
+      "RankLP": 78,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/c4d038f4-aae8-4659-b45a-3af66072fb46-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/SHUGIISHUGII"
+        }
+      ],
+      "GamesPlayed": 252,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/shugii-storm"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 23,
+      "Name": "GAMERGIRL",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 11,
+      "HP": 0,
+      "RankTitle": "Diamond",
+      "RankTier": "IV",
+      "RankLP": 15,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/a360be90-8828-46b5-8420-952407cd6d0c-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/GAMERGIRL"
+        }
+      ],
+      "GamesPlayed": 175,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/taco-12369"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 24,
+      "Name": "MIKKILOL",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 11,
+      "HP": 0,
+      "RankTitle": "Diamond",
+      "RankTier": "IV",
+      "RankLP": 0,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/73abbf39-d3bc-4530-899c-279162c88182-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/MIKKILOL"
+        }
+      ],
+      "GamesPlayed": 211,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Millilol-NA1"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 25,
+      "Name": "BUNNYCOMB",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 11,
+      "HP": 0,
+      "RankTitle": "Emerald",
+      "RankTier": "II",
+      "RankLP": 54,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/235983bf-0e26-418c-94fa-72ab40b85b6d-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/BUNNYCOMB"
+        }
+      ],
+      "GamesPlayed": 75,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/bunny-comb"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 26,
+      "Name": "TRICIAISABIRDY",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 11,
+      "HP": 0,
+      "RankTitle": "Emerald",
+      "RankTier": "III",
+      "RankLP": 62,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/6084875d-4ca3-4408-b110-bdee75ec1fd3-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/TRICIAISABIRDY"
+        }
+      ],
+      "GamesPlayed": 164,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Triciaisabirdy-NA2"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 27,
+      "Name": "DEWCHEE",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 11,
+      "HP": 0,
+      "RankTitle": "Emerald",
+      "RankTier": "IV",
+      "RankLP": 95,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/29a0fd78-b119-4400-9233-812d9b8bb323-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/DEWCHEE"
+        }
+      ],
+      "GamesPlayed": 188,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/lychee-mon"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 28,
+      "Name": "OHGAWDKATE",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 11,
+      "HP": 0,
+      "RankTitle": "Emerald",
+      "RankTier": "IV",
+      "RankLP": 49,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/21993adf-67a6-45e6-81fe-3ad54eb3ae08-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/OHGAWDKATE"
+        }
+      ],
+      "GamesPlayed": 329,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Ohgawdkate-dev"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 29,
+      "Name": "NATESOJU",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 11,
+      "HP": 0,
+      "RankTitle": "Emerald",
+      "RankTier": "IV",
+      "RankLP": 5,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/113d549a-b447-4642-aa2c-b5c388844623-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/NATESOJU"
+        }
+      ],
+      "GamesPlayed": 138,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/NateSoju-TTV"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 30,
+      "Name": "TRELLIRELLI",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 10,
+      "HP": 0,
+      "RankTitle": "Emerald",
+      "RankTier": "I",
+      "RankLP": 73,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/5d467cff-44a8-4ee1-8762-bbf13afbfe10-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/TRELLIRELLI"
+        }
+      ],
+      "GamesPlayed": 138,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Trellirelli-NA1"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 31,
+      "Name": "RAIKAVT",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 10,
+      "HP": 0,
+      "RankTitle": "Emerald",
+      "RankTier": "I",
+      "RankLP": 20,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/ec990c40-f44f-4a15-a7b8-e1ef060fd409-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/RAIKAVT"
+        }
+      ],
+      "GamesPlayed": 216,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Raika-NTR"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 32,
+      "Name": "IM_IPN",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 10,
+      "HP": 0,
+      "RankTitle": "Emerald",
+      "RankTier": "I",
+      "RankLP": 0,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/a1d20ac5-5421-4cde-a019-d0dc98fedd73-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/IM_IPN"
+        }
+      ],
+      "GamesPlayed": 154,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Babygirl iPN-NA1"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 33,
+      "Name": "JAROJARO",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 10,
+      "HP": 0,
+      "RankTitle": "Emerald",
+      "RankTier": "II",
+      "RankLP": 75,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/429c3b21-7afc-463b-b71f-a97a1c3fc4e8-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/JAROJARO"
+        }
+      ],
+      "GamesPlayed": 252,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/jarojaro-NA1"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 34,
+      "Name": "PUPPERY",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 10,
+      "HP": 0,
+      "RankTitle": "Emerald",
+      "RankTier": "II",
+      "RankLP": 16,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/225031cd-9fa7-42d9-bf96-8b274ddd396d-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/PUPPERY"
+        }
+      ],
+      "GamesPlayed": 205,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Puppery-NA13"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 35,
+      "Name": "FFSADE",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 10,
+      "HP": 0,
+      "RankTitle": "Emerald",
+      "RankTier": "II",
+      "RankLP": 0,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/d09206c7-8ba0-402f-8946-c2cd2b1a4ed4-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/FFSADE"
+        }
+      ],
+      "GamesPlayed": 134,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/ffSade-ART"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 36,
+      "Name": "DAICOSMOS",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 10,
+      "HP": 0,
+      "RankTitle": "Emerald",
+      "RankTier": "III",
+      "RankLP": 98,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/19a1f763-3fa0-427d-adee-8a15827bc85a-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/DAICOSMOS"
+        }
+      ],
+      "GamesPlayed": 222,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Daicosmos-NA1"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 37,
+      "Name": "GMUNDY",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 10,
+      "HP": 0,
+      "RankTitle": "Emerald",
+      "RankTier": "III",
+      "RankLP": 5,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/e75d04ca-b28d-4ee3-a790-ee36856107d7-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/GMUNDY"
+        }
+      ],
+      "GamesPlayed": 168,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Gmundy-NA1"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 38,
+      "Name": "VGUMIHO",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 10,
+      "HP": 0,
+      "RankTitle": "Emerald",
+      "RankTier": "IV",
+      "RankLP": 0,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/6b680c11-2e3a-4f12-ad82-1bd11cac5ae1-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/VGUMIHO"
+        }
+      ],
+      "GamesPlayed": 108,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/vGumiho-GUMI"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 39,
+      "Name": "OMEGALID",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 9,
+      "HP": 0,
+      "RankTitle": "Emerald",
+      "RankTier": "III",
+      "RankLP": 58,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/cd4a1b32-10ed-42b7-b7a2-276721dbee96-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/OMEGALID"
+        }
+      ],
+      "GamesPlayed": 110,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Lid-9742"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 40,
+      "Name": "BAYCON_",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 9,
+      "HP": 0,
+      "RankTitle": "Emerald",
+      "RankTier": "III",
+      "RankLP": 49,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/bda6b42d-4744-4fdb-baf7-a19b57e7553a-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/BAYCON_"
+        }
+      ],
+      "GamesPlayed": 90,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/baycon-5005"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 41,
+      "Name": "JONATHANTENE",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 9,
+      "HP": 0,
+      "RankTitle": "Emerald",
+      "RankTier": "III",
+      "RankLP": 0,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/a2f8e75d-3d45-474a-92c4-135cb52fdbe0-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/JONATHANTENE"
+        }
+      ],
+      "GamesPlayed": 130,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/jtene-NA1"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 42,
+      "Name": "NALIBELLAA",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 9,
+      "HP": 0,
+      "RankTitle": "Emerald",
+      "RankTier": "III",
+      "RankLP": 0,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/06ca1df8-52fa-4d22-98d0-4a80e051f77f-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/NALIBELLAA"
+        }
+      ],
+      "GamesPlayed": 65,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/USBee-NA1"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 43,
+      "Name": "APIARYKEYBOARDS",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 9,
+      "HP": 0,
+      "RankTitle": "Emerald",
+      "RankTier": "IV",
+      "RankLP": 38,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/ab18b5bd-e0f0-4f02-aef8-d3bea2f60621-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/APIARYKEYBOARDS"
+        }
+      ],
+      "GamesPlayed": 131,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Gasp-boop"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 44,
+      "Name": "ENJOYREEDING",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 9,
+      "HP": 0,
+      "RankTitle": "Emerald",
+      "RankTier": "IV",
+      "RankLP": 0,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/f61856e6-5434-4f43-8055-e8034e578167-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/ENJOYREEDING"
+        }
+      ],
+      "GamesPlayed": 133,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Reeding-green"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 45,
+      "Name": "LILPOOGI",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 9,
+      "HP": 0,
+      "RankTitle": "Emerald",
+      "RankTier": "IV",
+      "RankLP": 0,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/87a05a0a-43e4-4d9d-bd12-b664ce5621c7-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/LILPOOGI"
+        }
+      ],
+      "GamesPlayed": 127,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Poogi-oink"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 46,
+      "Name": "ARIASYNTH",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 9,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "I",
+      "RankLP": 0,
+      "AvatarUrl": "https://api.boxboxtft.com/avatars/aria.jpg",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_yt.png",
+          "LinkUri": "https://www.youtube.com/@AriaSynth"
+        }
+      ],
+      "GamesPlayed": 84,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/AriaSynth-VOLs"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 47,
+      "Name": "BESTIEINSLOT",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 9,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "I",
+      "RankLP": 0,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/a906df52-73bf-4c53-8b0e-febacb2a93b2-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/BESTIEINSLOT"
+        }
+      ],
+      "GamesPlayed": 59,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Saya-Duck"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 48,
+      "Name": "DERAJN",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 9,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "II",
+      "RankLP": 75,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/099afce2-20d1-41b8-add1-dbee1edeb673-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/DERAJN"
+        }
+      ],
+      "GamesPlayed": 129,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/DeraJN-NA1"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 49,
+      "Name": "NYXIVORA",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 9,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "II",
+      "RankLP": 30,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/cbccff8b-5c28-4198-a2b5-b6afd7d90d84-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/NYXIVORA"
+        }
+      ],
+      "GamesPlayed": 121,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Cat Pee-Meowy"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 50,
+      "Name": "BELINDABTW",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 8,
+      "HP": 0,
+      "RankTitle": "Emerald",
+      "RankTier": "IV",
+      "RankLP": 65,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/4ac07072-cd94-4119-aec9-43663e470f6c-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/BELINDABTW"
+        }
+      ],
+      "GamesPlayed": 95,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/belindabtw-NA1"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 51,
+      "Name": "CHISUKETHUR",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 8,
+      "HP": 0,
+      "RankTitle": "Emerald",
+      "RankTier": "IV",
+      "RankLP": 0,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/e6fdf294-34df-4c90-86be-25eda93ae589-profile_image-300x300.jpeg",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/CHISUKETHUR"
+        }
+      ],
+      "GamesPlayed": 67,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/TTV Chisukethur-Gamba"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 52,
+      "Name": "DREADS",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 8,
+      "HP": 0,
+      "RankTitle": "Emerald",
+      "RankTier": "IV",
+      "RankLP": 0,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/8939a77f74891ca0-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/DREADS"
+        }
+      ],
+      "GamesPlayed": 81,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/scientist dreads-NA1"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 53,
+      "Name": "TWINKUU",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 8,
+      "HP": 0,
+      "RankTitle": "Emerald",
+      "RankTier": "IV",
+      "RankLP": 0,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/03f441bc-58c8-4faa-91a6-d8c40ae2921a-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/TWINKUU"
+        }
+      ],
+      "GamesPlayed": 116,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Twinkuu-Star"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 54,
+      "Name": "TYG_",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 8,
+      "HP": 0,
+      "RankTitle": "Emerald",
+      "RankTier": "IV",
+      "RankLP": 0,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/70f02a75-d995-4e9d-aef0-f2195baf26c0-profile_image-300x300.jpg",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/TYG_"
+        }
+      ],
+      "GamesPlayed": 97,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Ty G-Teemo"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 55,
+      "Name": "CWISTINART",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 8,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "I",
+      "RankLP": 50,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/bedec2b4-6a80-45c7-98fb-d25c67c2c60b-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/CWISTINART"
+        }
+      ],
+      "GamesPlayed": 99,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Fried egg-fyi"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 56,
+      "Name": "MOCHIIMOCHIIVT",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 8,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "II",
+      "RankLP": 52,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/10cd0a14-fd76-4c31-9797-20ef83970472-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/MOCHIIMOCHIIVT"
+        }
+      ],
+      "GamesPlayed": 87,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/mochii-yumm"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 57,
+      "Name": "MANGOFRAMER",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 8,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "II",
+      "RankLP": 34,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/ac39a9ec-1f86-4790-b760-21d03c51d573-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/MANGOFRAMER"
+        }
+      ],
+      "GamesPlayed": 143,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/MangoFarmer-NA1"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 58,
+      "Name": "LEGITKOREA",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 8,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "II",
+      "RankLP": 27,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/4730f6ea-4f1d-4cec-b827-cbdacae79153-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/LEGITKOREA"
+        }
+      ],
+      "GamesPlayed": 72,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/LegitKorea-NA1"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 59,
+      "Name": "MIDNABABY",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 8,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "II",
+      "RankLP": 25,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/cc6f61a9-ca1a-4893-ac59-728143839323-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/MIDNABABY"
+        }
+      ],
+      "GamesPlayed": 102,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Midnababy-NA1"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 60,
+      "Name": "SOOOBEAN",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 8,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "II",
+      "RankLP": 23,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/1ae09fbb-b03e-4f34-825b-17363714fed9-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/SOOOBEAN"
+        }
+      ],
+      "GamesPlayed": 134,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/sooob-maus"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 61,
+      "Name": "TRUMPSC",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 8,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "III",
+      "RankLP": 22,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/a3e4571a1b9363e8-profile_image-300x300.jpeg",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/TRUMPSC"
+        }
+      ],
+      "GamesPlayed": 158,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Trumpo-NA1"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 62,
+      "Name": "XREKUDO",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 8,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "III",
+      "RankLP": 7,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/5726e2a0-1db7-4090-ad08-0efc248987c8-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/XREKUDO"
+        }
+      ],
+      "GamesPlayed": 54,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/RekudoVT-4321"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 63,
+      "Name": "SADMINA",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 8,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "IV",
+      "RankLP": 21,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/22de7285-9054-418e-91a2-241a4d4f651a-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/SADMINA"
+        }
+      ],
+      "GamesPlayed": 58,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/sadkitty-tiddy"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 64,
+      "Name": "RYANRESPAWNS",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 8,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "IV",
+      "RankLP": 2,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/1876fbad-ce6f-4f5b-98e4-0fd407c9e0bf-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/RYANRESPAWNS"
+        }
+      ],
+      "GamesPlayed": 166,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Ryan-Rpwn"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 65,
+      "Name": "ABE",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 8,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "IV",
+      "RankLP": 0,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/46eb10dd-1d19-4d87-a362-cc8d7935d3b5-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/ABE"
+        }
+      ],
+      "GamesPlayed": 113,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Abe-6969"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 66,
+      "Name": "POBELTER",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 7,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "I",
+      "RankLP": 24,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/73132e60-8583-4cfd-b3e9-d9b433bbeaa3-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/POBELTER"
+        }
+      ],
+      "GamesPlayed": 65,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Pobelter-NA1"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 67,
+      "Name": "RICHUA",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 7,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "I",
+      "RankLP": 5,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/2e40282b-1ba2-4242-bacd-3b02dfa2e34c-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/RICHUA"
+        }
+      ],
+      "GamesPlayed": 96,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Richua-Bee"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 68,
+      "Name": "ELYZAEVE",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 7,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "II",
+      "RankLP": 15,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/fe58290d-dfec-49a6-8266-7b41304862c0-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/ELYZAEVE"
+        }
+      ],
+      "GamesPlayed": 109,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/ToesConsumer-feet"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 69,
+      "Name": "YUUKIKOUBYOU",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 7,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "III",
+      "RankLP": 80,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/a45759dc-c4fa-4539-9669-7fdbc7684564-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/YUUKIKOUBYOU"
+        }
+      ],
+      "GamesPlayed": 93,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Yuukikoubyou-kekw"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 70,
+      "Name": "LOLZ_NIKI",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 7,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "III",
+      "RankLP": 75,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/d201f536-7889-4363-ae1b-a69c6fab4b65-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/LOLZ_NIKI"
+        }
+      ],
+      "GamesPlayed": 80,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/lolz niki-na1"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 71,
+      "Name": "XCHOCOBARS",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 7,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "III",
+      "RankLP": 75,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/88976562-db35-499b-a9d5-03d99a543606-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/XCHOCOBARS"
+        }
+      ],
+      "GamesPlayed": 63,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/ManlyManChad-NA1"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 72,
+      "Name": "ARTSYWEEBIE",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 7,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "III",
+      "RankLP": 52,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/85e30131-e320-44c0-9068-f1a3dc227aed-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/ARTSYWEEBIE"
+        }
+      ],
+      "GamesPlayed": 120,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/sylveon-tsy"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 73,
+      "Name": "AKENSHIHD",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 7,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "III",
+      "RankLP": 20,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/164dbefb-8b2d-4969-afd7-7fb5122949f3-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/AKENSHIHD"
+        }
+      ],
+      "GamesPlayed": 119,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Akenshi-2525"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 74,
+      "Name": "MADIAPOP",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 7,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "III",
+      "RankLP": 0,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/3b7bacc8-45b7-4023-82bf-2d080347abb6-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/MADIAPOP"
+        }
+      ],
+      "GamesPlayed": 103,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Madiapop-sweet"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 75,
+      "Name": "THETOFUPRINCESS",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 7,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "IV",
+      "RankLP": 58,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/c05be604-6c86-467e-830c-394c67e25ccb-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/thetofuprincess"
+        }
+      ],
+      "GamesPlayed": 144,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/TofuPrincess-143"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 76,
+      "Name": "GRAPPLR",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 7,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "IV",
+      "RankLP": 30,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/98416f53-6b66-42d5-92b9-935f29f151a0-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/GRAPPLR"
+        }
+      ],
+      "GamesPlayed": 56,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/rLppAN-00001"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 77,
+      "Name": "MANGOFERRR",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 7,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "IV",
+      "RankLP": 6,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/46cb065d-5d16-4fa7-8c75-cc120a9a776b-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/MANGOFERRR"
+        }
+      ],
+      "GamesPlayed": 72,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/mangofer-6960"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 78,
+      "Name": "ELIASTELLARIA",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 7,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "IV",
+      "RankLP": 0,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/aadfa3e0-9b12-4ca9-a33c-d6614174daba-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/ELIASTELLARIA"
+        }
+      ],
+      "GamesPlayed": 64,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/ewia-1234"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 79,
+      "Name": "PATSUKIS",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 7,
+      "HP": 0,
+      "RankTitle": "Gold",
+      "RankTier": "I",
+      "RankLP": 6,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/62e64e45-abfc-423e-9568-992c2674f831-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/PATSUKIS"
+        }
+      ],
+      "GamesPlayed": 39,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/togepi-44444"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 80,
+      "Name": "ACHAUIE",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 7,
+      "HP": 0,
+      "RankTitle": "Gold",
+      "RankTier": "II",
+      "RankLP": 75,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/8bccbc27-bc86-4cb2-961c-53235c096b34-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/ACHAUIE"
+        }
+      ],
+      "GamesPlayed": 43,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/achauie-boba"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 81,
+      "Name": "L21SAAC",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "III",
+      "RankLP": 88,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/8b654b39-a92a-4429-9848-eb87bfbbe765-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/L21saac"
+        }
+      ],
+      "GamesPlayed": 68,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/1saac-Hncho"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 82,
+      "Name": "MONSOONGG",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "III",
+      "RankLP": 1,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/971d1297-1de1-47ca-becc-6cb45b01dbcb-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/MONSOONGG"
+        }
+      ],
+      "GamesPlayed": 47,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Monsoon-4808"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 83,
+      "Name": "AZUZZZU",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "III",
+      "RankLP": 0,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/18120042-b5bf-49c1-a75c-6024327660b1-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/AZUZZZU"
+        }
+      ],
+      "GamesPlayed": 81,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Azuzu-MYY39"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 84,
+      "Name": "ZETTANOISE",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "III",
+      "RankLP": 0,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/4a0e730e-4dbe-48f5-987b-f9698cbe8181-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/ZETTANOISE"
+        }
+      ],
+      "GamesPlayed": 111,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Zetta-TTV"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 85,
+      "Name": "ARIASAKI",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "IV",
+      "RankLP": 64,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/6e5892f2-0336-4ec1-82df-4e89470fda3a-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/ARIASAKI"
+        }
+      ],
+      "GamesPlayed": 159,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/AriaSaki-NA1"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 86,
+      "Name": "BYEOLYUNA",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "IV",
+      "RankLP": 46,
+      "AvatarUrl": "https://api.boxboxtft.com/avatars/byeolyuna.jpg",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_yt.png",
+          "LinkUri": "https://www.youtube.com/@byeolyuna"
+        }
+      ],
+      "GamesPlayed": 57,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/i wub kiwis-kiki"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 87,
+      "Name": "TALILY",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "IV",
+      "RankLP": 43,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/b1a5dfce-6d53-43e1-9fa1-cbc3f06c8797-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/TALILY"
+        }
+      ],
+      "GamesPlayed": 97,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/SUPERMEGAKITTY94-MEOW"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 88,
+      "Name": "LINHLY_",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "IV",
+      "RankLP": 19,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/1fdfc09e-705c-48a0-ae50-7255541f84fa-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/LINHLY_"
+        }
+      ],
+      "GamesPlayed": 82,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Linhly-PEEEE"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 89,
+      "Name": "SWEATYLILKOI",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "IV",
+      "RankLP": 14,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/a992787d-aa5f-4b07-a2dd-3248c0aec2c1-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/SWEATYLILKOI"
+        }
+      ],
+      "GamesPlayed": 76,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Toomi-NA1"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 90,
+      "Name": "ANDVARI",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "IV",
+      "RankLP": 10,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/andvari-profile_image-bdea43b4bde8a973-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/ANDVARI"
+        }
+      ],
+      "GamesPlayed": 76,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Andvari-0007"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 91,
+      "Name": "GENTLEBITES",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "IV",
+      "RankLP": 10,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/9f9b7e8f-310c-416b-85e0-4c0012093ef1-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/GENTLEBITES"
+        }
+      ],
+      "GamesPlayed": 70,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Gentlebites-dizzy"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 92,
+      "Name": "MORGANA",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Plat",
+      "RankTier": "IV",
+      "RankLP": 0,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/ea571347-e2b0-4b91-8c44-ebd3dd240fe3-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/MORGANA"
+        }
+      ],
+      "GamesPlayed": 59,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Morgana-goon"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 93,
+      "Name": "CYNOSQUARE",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Gold",
+      "RankTier": "I",
+      "RankLP": 43,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/fbe3ec84-0f29-4a7d-8b05-df76c678ab1e-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/CYNOSQUARE"
+        }
+      ],
+      "GamesPlayed": 84,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/CynoSquare-3308"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 94,
+      "Name": "DENIPON",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Gold",
+      "RankTier": "I",
+      "RankLP": 25,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/ba266aba-f190-4e4d-9f41-3ec12d2d7662-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/DENIPON"
+        }
+      ],
+      "GamesPlayed": 44,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Denipon-na1"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 95,
+      "Name": "5UP",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Gold",
+      "RankTier": "I",
+      "RankLP": 1,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/2b6916e0-000d-4490-942a-da5e561aaf48-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/5UP"
+        }
+      ],
+      "GamesPlayed": 56,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/5up-NA1"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 96,
+      "Name": "BRITAAANY",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Gold",
+      "RankTier": "II",
+      "RankLP": 91,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/f767de76-84ad-4674-ba47-1781e90d5308-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/BRITAAANY"
+        }
+      ],
+      "GamesPlayed": 58,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/reowposting-grr"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 97,
+      "Name": "NEPHEWDORK",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Gold",
+      "RankTier": "II",
+      "RankLP": 60,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/fb50f895-bd09-494b-a0fb-b37411882bb4-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/NEPHEWDORK"
+        }
+      ],
+      "GamesPlayed": 32,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Nephew237142-NA1"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 98,
+      "Name": "OMARISHIZUKU",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Gold",
+      "RankTier": "II",
+      "RankLP": 59,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/bc6eff43-311f-4c72-809d-5f6005991eca-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/OMARISHIZUKU"
+        }
+      ],
+      "GamesPlayed": 90,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Shizuku-BUBS"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 99,
+      "Name": "JUEYHONG",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Gold",
+      "RankTier": "II",
+      "RankLP": 55,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/b2cbae29-4937-4dfd-a07c-1ea63d40a1ea-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/JUEYHONG"
+        }
+      ],
+      "GamesPlayed": 52,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Juey-Herm"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 100,
+      "Name": "PHOENIXXVT",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Gold",
+      "RankTier": "II",
+      "RankLP": 45,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/9df46b3b-63be-468c-85c5-22b43c32767d-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/PHOENIXXVT"
+        }
+      ],
+      "GamesPlayed": 35,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/PhoenixxVT-NA1"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 101,
+      "Name": "MYON",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Gold",
+      "RankTier": "II",
+      "RankLP": 37,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/6ffda04e-9c5a-437c-845e-52ce2c39425d-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/MYON"
+        }
+      ],
+      "GamesPlayed": 78,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Myon-you"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 102,
+      "Name": "SHAOSHALL",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Gold",
+      "RankTier": "II",
+      "RankLP": 28,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/584e431b-58ed-4151-9b63-ace917899597-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/SHAOSHALL"
+        }
+      ],
+      "GamesPlayed": 30,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/shaoshall-bork"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 103,
+      "Name": "MIAMELONYA",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Gold",
+      "RankTier": "II",
+      "RankLP": 15,
+      "AvatarUrl": "https://api.boxboxtft.com/avatars/miamelonya.jpg",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_yt.png",
+          "LinkUri": "https://www.youtube.com/@MiaMelonya"
+        }
+      ],
+      "GamesPlayed": 47,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/tall υωυ eboy-사랑해요"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 104,
+      "Name": "SYKKUNO",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Gold",
+      "RankTier": "II",
+      "RankLP": 7,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/sykkuno-profile_image-6ab1e70e07e29e9b-300x300.jpeg",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/SYKKUNO"
+        }
+      ],
+      "GamesPlayed": 44,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Sykkuno-LEAF"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 105,
+      "Name": "NEEDYHENRY",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Gold",
+      "RankTier": "II",
+      "RankLP": 0,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/ad13a0d1-fa50-4d90-994f-3f20c128f1f2-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/NEEDYHENRY"
+        }
+      ],
+      "GamesPlayed": 35,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/needyhenry-rose"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 106,
+      "Name": "SANNAMONROLL",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Gold",
+      "RankTier": "II",
+      "RankLP": 0,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/a9b68b41-39ff-45e6-83f4-fa9bb8cd2aaf-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/SANNAMONROLL"
+        }
+      ],
+      "GamesPlayed": 67,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/sannamon-roll"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 107,
+      "Name": "TEMMISA",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Gold",
+      "RankTier": "II",
+      "RankLP": 0,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/2c8b6dd0-3e22-4a14-97bf-560932e06d77-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/TEMMISA"
+        }
+      ],
+      "GamesPlayed": 31,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Temmisa-1111"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 108,
+      "Name": "JUSTCALLMEBERT",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Gold",
+      "RankTier": "III",
+      "RankLP": 92,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/e7dd2a34-6b15-44c3-aafc-5b0f412ee474-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/JUSTCALLMEBERT"
+        }
+      ],
+      "GamesPlayed": 39,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Justcallmeb3rt-NA1"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 109,
+      "Name": "NEMONEVERMORE",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Gold",
+      "RankTier": "III",
+      "RankLP": 90,
+      "AvatarUrl": "https://api.boxboxtft.com/avatars/nemonevermore.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_yt.png",
+          "LinkUri": "https://www.youtube.com/@NemoNevermore"
+        }
+      ],
+      "GamesPlayed": 31,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/NEMO NEVERMORE-birb"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 110,
+      "Name": "YARIMELL",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Gold",
+      "RankTier": "III",
+      "RankLP": 47,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/d2f65e25-af72-4f95-9a81-35421fc2517b-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/YARIMELL"
+        }
+      ],
+      "GamesPlayed": 43,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/YarimellNA-melly"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 111,
+      "Name": "RINIMIKI",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Gold",
+      "RankTier": "III",
+      "RankLP": 42,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/74fc82a6-1a08-4912-b1ec-f2e7145c63ec-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/RINIMIKI"
+        }
+      ],
+      "GamesPlayed": 73,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/rini-bunny"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 112,
+      "Name": "TOOXCHILLY",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Gold",
+      "RankTier": "III",
+      "RankLP": 41,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/64564621-28c6-4b61-800b-838b40e6d258-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/TOOXCHILLY"
+        }
+      ],
+      "GamesPlayed": 69,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Too Chilly-Chill"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 113,
+      "Name": "VIORAWEISSHEART",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Gold",
+      "RankTier": "III",
+      "RankLP": 8,
+      "AvatarUrl": "https://api.boxboxtft.com/avatars/vioraweissheart.jpg",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_yt.png",
+          "LinkUri": "https://www.youtube.com/@VioraWeissheart"
+        }
+      ],
+      "GamesPlayed": 63,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Viora Weissheart-NA2"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 114,
+      "Name": "BEEHAVIOUR",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Gold",
+      "RankTier": "III",
+      "RankLP": 7,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/03182231-26bf-46ed-83ee-f438c04de6f1-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/BEEHAVIOUR"
+        }
+      ],
+      "GamesPlayed": 54,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/beehaviour-1010"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 115,
+      "Name": "RAYINA",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Gold",
+      "RankTier": "III",
+      "RankLP": 0,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/a323c0e3-6dca-43f4-91f1-4c88597f6315-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/RAYINA"
+        }
+      ],
+      "GamesPlayed": 34,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Rainy-Day"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 116,
+      "Name": "SATURNAZULE",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Gold",
+      "RankTier": "III",
+      "RankLP": 0,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/6f7c40ef-bf3b-4457-9194-50e6961a969b-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/SATURNAZULE"
+        }
+      ],
+      "GamesPlayed": 79,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Saturn-bunny"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 117,
+      "Name": "HALES",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Gold",
+      "RankTier": "IV",
+      "RankLP": 65,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/c1e39fc4-946b-4553-b9f2-3307faf1c1a9-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/HALES"
+        }
+      ],
+      "GamesPlayed": 38,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/fwog-luvr"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 118,
+      "Name": "AVERAEY",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Silver",
+      "RankTier": "II",
+      "RankLP": 38,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/3ca71450-96d0-4409-ab94-f0d247f519f4-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/AVERAEY"
+        }
+      ],
+      "GamesPlayed": 15,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Power Bottom AF-Gay"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 119,
+      "Name": "CANA",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Silver",
+      "RankTier": "II",
+      "RankLP": 0,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/3cf522aa-027c-46ce-aa0f-1c56dd0096ea-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/CANA"
+        }
+      ],
+      "GamesPlayed": 20,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/Cana-awa"
+    },
+    {
+      "Team": "entertainer",
+      "Rank": 120,
+      "Name": "CAPTURESCA",
+      "Eliminated": true,
+      "PotentiallyEliminated": false,
+      "DayEliminated": 6,
+      "HP": 0,
+      "RankTitle": "Bronze",
+      "RankTier": "III",
+      "RankLP": 4,
+      "AvatarUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/0bffb214-0913-4983-900f-71ade5bbdaf6-profile_image-300x300.png",
+      "Socials": [
+        {
+          "ImageUri": "https://api.boxboxtft.com/files/ico_twitch.svg",
+          "LinkUri": "https://twitch.tv/CAPTURESCA"
+        }
+      ],
+      "GamesPlayed": 13,
+      "IsLive": false,
+      "RankUrl": "https://tft.op.gg/summoners/na/mango-dan"
+    }
+  ]
+}
