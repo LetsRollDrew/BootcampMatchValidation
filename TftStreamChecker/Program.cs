@@ -127,7 +127,7 @@ public static class Program
     {
         const double defaultBufferHours = 10.0 / 60.0;
 
-        var riotId = RiotIdParser.Parse(participant.RankUrl ?? options.RiotId);
+        var riotId = RiotIdParser.Parse(ExtractRiotId(participant.RankUrl) ?? options.RiotId);
         var twitchLogin = string.IsNullOrWhiteSpace(options.TwitchLogin)
             ? ExtractTwitchLogin(participant.Socials)
             : options.TwitchLogin;
@@ -174,6 +174,24 @@ public static class Program
         var displayNameFinal = participant.Name ?? (riotId.GameName + "#" + riotId.TagLine);
         SummaryPrinter.Print(displayNameFinal, riotId, twitchLogin, stats, options.Threshold);
         CsvWriter.Append(options.OutputCsv ?? string.Empty, displayNameFinal, riotId, twitchLogin, stats);
+    }
+
+    private static string? ExtractRiotId(string? rankUrl)
+    {
+        if (string.IsNullOrWhiteSpace(rankUrl)) return null;
+        try
+        {
+            var uri = new Uri(rankUrl);
+            var segments = uri.AbsolutePath.Split('/', StringSplitOptions.RemoveEmptyEntries);
+            var last = segments.LastOrDefault();
+            if (string.IsNullOrWhiteSpace(last)) return null;
+            var decoded = Uri.UnescapeDataString(last);
+            return decoded;
+        }
+        catch
+        {
+            return null;
+        }
     }
 
     private static string ExtractTwitchLogin(List<Social>? socials)

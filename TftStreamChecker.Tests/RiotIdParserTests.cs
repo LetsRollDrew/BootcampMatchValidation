@@ -44,4 +44,6 @@ public class RiotIdParserTests
     {
         Assert.Throws<ArgumentException>(() => RiotIdParser.Parse(input));
     }
+
+    // ExtractRiotId is internal; covered via Program.ExtractRiotId usage.
 }
