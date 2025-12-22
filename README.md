@@ -39,7 +39,7 @@ dotnet test TftStreamChecker.sln
   ```
 
 ## Defaults/toggles:
-- `--concurrency` defaults to 1 (increase cautiously).
+- `--concurrency` defaults to 1 (Probably best at 1 with basic API Key)
 - `--outputCsv ""` disables CSV.
 - `--noCache` skips `.cache` reads/writes.
 - Riot 404 for Name Change catches and a zeroed CSV row.
