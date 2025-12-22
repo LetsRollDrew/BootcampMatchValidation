@@ -25,7 +25,7 @@ dotnet test TftStreamChecker.sln
 
 ## Run
 ```bash
-./run.sh --riotId "name#tag" --twitch login
+./scripts/stream-check-all.sh
 ```
 
 ## Usage examples

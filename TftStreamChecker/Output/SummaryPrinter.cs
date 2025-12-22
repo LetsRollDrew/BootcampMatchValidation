@@ -12,8 +12,7 @@ public static class SummaryPrinter
         Console.WriteLine($"On-stream: {stats.OnStream}");
         Console.WriteLine($"Off-stream: {stats.OffStream}");
         Console.WriteLine($"Unknown: {stats.Unknown}");
-        Console.WriteLine($"On-stream % (known-only): {FormatPercent(stats.PctKnown)}");
-        Console.WriteLine($"On-stream % (total): {FormatPercent(stats.PctTotal)}");
+        Console.WriteLine($"On-stream %: {FormatPercent(stats.PctTotal)}");
         Console.WriteLine($"Result: {(stats.Pass ? "PASS" : "FAIL")} (threshold {(threshold * 100):0}%)");
         Console.WriteLine("");
     }

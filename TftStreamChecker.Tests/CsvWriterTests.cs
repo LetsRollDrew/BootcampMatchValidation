@@ -20,7 +20,6 @@ public class CsvWriterTests
                 OnStream = 1,
                 OffStream = 1,
                 Unknown = 0,
-                PctKnown = 0.5,
                 PctTotal = 0.5,
                 Pass = false
             };

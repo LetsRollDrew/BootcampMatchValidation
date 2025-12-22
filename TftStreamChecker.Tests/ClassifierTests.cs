@@ -43,7 +43,6 @@ public class ClassifierTests
 
         var stats = Classifier.Classify(matches, vods, bufferHours: 0, threshold: 0.5);
         Assert.True(stats.Pass);
-        Assert.Equal(1.0, stats.PctKnown);
         Assert.Equal(1.0, stats.PctTotal);
     }
 

@@ -27,8 +27,6 @@ public static class Classifier
         }
 
         var total = onStream + offStream + unknown;
-        var known = total - unknown;
-        var pctKnown = known > 0 ? onStream / (double)known : 0;
         var pctTotal = total > 0 ? onStream / (double)total : 0;
 
         return new MatchStats
@@ -37,9 +35,8 @@ public static class Classifier
             OnStream = onStream,
             OffStream = offStream,
             Unknown = unknown,
-            PctKnown = pctKnown,
             PctTotal = pctTotal,
-            Pass = pctKnown >= threshold
+            Pass = pctTotal >= threshold
         };
     }
 }

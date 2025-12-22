@@ -16,7 +16,6 @@ public static class CsvWriter
         "OnStream",
         "OffStream",
         "Unknown",
-        "PctKnown",
         "PctTotal",
         "Result"
     };
@@ -42,7 +41,6 @@ public static class CsvWriter
             stats.OnStream,
             stats.OffStream,
             stats.Unknown,
-            Escape(FormatPercent(stats.PctKnown)),
             Escape(FormatPercent(stats.PctTotal)),
             Escape(resultOverride ?? (stats.Pass ? "PASS" : "FAIL")));
 

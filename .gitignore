@@ -2,21 +2,12 @@
 bin/
 obj/
 .vs/
-output/
 !/TftStreamChecker/Output/
 .cache/
 .env
 
-# User-specific/IDE
-.idea/
 .vscode/
 *.user
 *.suo
 
-# OS noise
-*.DS_Store
-Thumbs.db
-
-
 tft-compl/
-.env
