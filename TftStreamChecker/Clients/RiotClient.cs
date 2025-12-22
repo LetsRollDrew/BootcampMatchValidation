@@ -6,6 +6,14 @@ using TftStreamChecker.Models;
 
 namespace TftStreamChecker.Clients;
 
+/*******************************************************************
+*
+* Riot Client
+*
+* This wraps the riot account/matches with retries + cache to avoid
+* constantly bruteforcing the api if the data is still valid
+* Also logs the calls to view rate limiting issues if they arise
+********************************************************************/
 public class RiotClient
 {
     private readonly HttpRetryClient _http;

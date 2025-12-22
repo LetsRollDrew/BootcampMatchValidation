@@ -15,12 +15,12 @@ namespace TftStreamChecker;
 
 /*************************************************************************
 *
-* TFT Online/Offline Stream Checker
+* TFT Online/Offline Stream Game Validater
 *
-* Entry point bootstrapper
-*
-* adding CLI parsing and service wiring and execution here later
-************************************************************************/
+* Loads .env & CLI options, builds riot/twitch clients, with cache if needed
+* resolves if single or batch parse, fetches match details + vod windows,
+* and classifies on/off stream to print results into .csv
+*****************************************************************************/
 public static class Program
 {
     public static int Main(string[] args)

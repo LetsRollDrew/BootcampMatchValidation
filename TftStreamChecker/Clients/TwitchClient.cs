@@ -6,6 +6,13 @@ using TftStreamChecker.Models;
 
 namespace TftStreamChecker.Clients;
 
+/**************************************************************************
+*
+* Twitch Client
+*
+* Grabs app tokens, users, & VOD windows with retries + cache so we
+* don't brute force VODs and reuse responses across runs
+**************************************************************************/
 public class TwitchClient
 {
     private readonly HttpRetryClient _http;

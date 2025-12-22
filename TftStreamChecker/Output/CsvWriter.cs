@@ -4,6 +4,14 @@ using TftStreamChecker.Models;
 
 namespace TftStreamChecker.Output;
 
+/**********************************************************************
+*
+* CSV Writer
+*
+* Appends rows for each participant so batch runs can output summaries
+* per file parsed without clashing with other files
+* (mainly did this for the Beginner/Casual/Advanced/Pro being seperate)
+************************************************************************/
 public static class CsvWriter
 {
     private static readonly string[] Header =

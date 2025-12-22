@@ -2,6 +2,14 @@ using System.Text.Json;
 
 namespace TftStreamChecker.Cache;
 
+/***********************************************************************
+*
+* Cache Store
+*
+* Persist small json blobs under .cache so riot/twitch calls can be reused
+* between runs, mainly just did this while actively testing runs, can be
+* disabled/toggled with --noCache flag for fresh data if needed
+**********************************************************************/
 public class CacheStore
 {
     private readonly string _root;

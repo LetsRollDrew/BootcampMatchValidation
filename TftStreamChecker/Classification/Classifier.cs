@@ -2,6 +2,14 @@ using TftStreamChecker.Models;
 
 namespace TftStreamChecker.Classification;
 
+/**********************************************************************
+*
+* Classifier
+*
+* Line up match start times with vod windows (+ marginal buffer)
+* to compute on/off stream ratios for the pass/fail assignments
+***********************************************************************/
+
 public static class Classifier
 {
     public static MatchStats Classify(
