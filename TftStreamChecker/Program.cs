@@ -9,6 +9,7 @@ using TftStreamChecker.Models;
 using TftStreamChecker.Classification;
 using TftStreamChecker.Output;
 using TftStreamChecker.Cache;
+using TftStreamChecker.Participants;
 
 namespace TftStreamChecker;
 
@@ -97,6 +98,40 @@ public static class Program
         var riot = new RiotClient(retry, log, env.RiotApiKey, cache: cache, useCache: options.UseCache);
         var twitch = new TwitchClient(retry, log, env.TwitchClientId, env.TwitchClientSecret, cache: cache, useCache: options.UseCache);
 
+        // batch mode if input provided
+        if (!string.IsNullOrWhiteSpace(options.InputPath))
+        {
+            var participants = await ParticipantParser.ReadAsync(options);
+            var sorted = participants
+                .OrderBy(p => p.Rank ?? double.PositiveInfinity)
+                .Take(30)
+                .ToList();
+            foreach (var participant in sorted)
+            {
+                await ProcessOne(options, env, riot, twitch, window, log, participant.Name ?? "(unknown)", participant.RankUrl, participant.Socials);
+            }
+            return;
+        }
+
+        await ProcessOne(options, env, riot, twitch, window, log, options.RiotId, null, null);
+    }
+
+    private static async Task ProcessOne(
+        CliOptions options,
+        EnvConfig env,
+        RiotClient riot,
+        TwitchClient twitch,
+        ResolvedWindow window,
+        ConsoleLogger log,
+        string name,
+        string? rankUrl,
+        List<Social>? socials)
+    {
+        var riotId = RiotIdParser.Parse(rankUrl ?? options.RiotId);
+        var twitchLogin = string.IsNullOrWhiteSpace(options.TwitchLogin)
+            ? ExtractTwitchLogin(socials)
+            : options.TwitchLogin;
+
         var puuid = await riot.ResolvePuuid(riotId);
         var matchIds = await riot.ListMatchIds(puuid, riotId.Routing, window.StartMs, window.EndMs);
 
@@ -108,12 +143,26 @@ public static class Program
             if (summary != null) summaries.Add(summary);
         }
 
-        var user = await twitch.GetUserByLogin(options.TwitchLogin);
+        var user = await twitch.GetUserByLogin(twitchLogin);
         var vods = await twitch.ListVodIntervals(user.Id, window.StartMs, window.EndMs, defaultBufferHours);
 
         var stats = Classifier.Classify(summaries, vods, defaultBufferHours, options.Threshold);
-        SummaryPrinter.Print(options.RiotId, riotId, options.TwitchLogin, stats, options.Threshold);
-        CsvWriter.Append(options.OutputCsv ?? string.Empty, options.RiotId, riotId, options.TwitchLogin, stats);
+        SummaryPrinter.Print(name, riotId, twitchLogin, stats, options.Threshold);
+        CsvWriter.Append(options.OutputCsv ?? string.Empty, name, riotId, twitchLogin, stats);
+    }
+
+    private static string ExtractTwitchLogin(List<Social>? socials)
+    {
+        if (socials == null) return string.Empty;
+        foreach (var s in socials)
+        {
+            if (string.IsNullOrWhiteSpace(s?.LinkUri)) continue;
+            if (!s.LinkUri.Contains("twitch.tv", StringComparison.OrdinalIgnoreCase)) continue;
+            var uri = new Uri(s.LinkUri);
+            var segments = uri.AbsolutePath.Split('/', StringSplitOptions.RemoveEmptyEntries);
+            if (segments.Length > 0) return segments[0];
+        }
+        return string.Empty;
     }
 
     private static string Mask(string value)
