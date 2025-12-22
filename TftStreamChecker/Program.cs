@@ -39,16 +39,19 @@ public static class Program
             return 1;
         }
 
-        RiotId riotId;
-        try
+        RiotId? riotId = null;
+        if (string.IsNullOrWhiteSpace(options.InputPath))
         {
-            riotId = RiotIdParser.Parse(options.RiotId);
-            log.Info("riotId: " + riotId.GameName + "#" + riotId.TagLine + $" ({riotId.Routing})");
-        }
-        catch (Exception ex)
-        {
-            log.Error(ex.Message);
-            return 1;
+            try
+            {
+                riotId = RiotIdParser.Parse(options.RiotId);
+                log.Info("riotId: " + riotId.GameName + "#" + riotId.TagLine + $" ({riotId.Routing})");
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message);
+                return 1;
+            }
         }
 
         log.Info("twitch: " + (string.IsNullOrWhiteSpace(options.TwitchLogin) ? "(none)" : options.TwitchLogin));
@@ -87,7 +90,7 @@ public static class Program
     private static async Task RunSingle(
         CliOptions options,
         EnvConfig env,
-        RiotId riotId,
+        RiotId? riotId,
         ResolvedWindow window,
         ConsoleLogger log)
     {
@@ -112,7 +115,13 @@ public static class Program
             return;
         }
 
-        var single = new Participant { Name = options.RiotId };
+        if (riotId == null)
+        {
+            log.Error("riotId is required for single mode");
+            return;
+        }
+
+        var single = new Participant { Name = options.RiotId, RankUrl = options.RiotId.Replace("#", "-") };
         await ProcessOne(options, env, riot, twitch, window, log, single);
     }
 
@@ -127,7 +136,23 @@ public static class Program
     {
         const double defaultBufferHours = 10.0 / 60.0;
 
-        var riotId = RiotIdParser.Parse(ExtractRiotId(participant.RankUrl) ?? options.RiotId);
+        var riotIdText = ExtractRiotId(participant.RankUrl) ?? options.RiotId;
+        if (string.IsNullOrWhiteSpace(riotIdText))
+        {
+            log.Info("SKIP " + (participant.Name ?? "(unknown)") + ": missing riot id");
+            return;
+        }
+
+        RiotId riotId;
+        try
+        {
+            riotId = RiotIdParser.Parse(riotIdText);
+        }
+        catch (Exception ex)
+        {
+            log.Info("SKIP " + (participant.Name ?? "(unknown)") + ": " + ex.Message);
+            return;
+        }
         var twitchLogin = string.IsNullOrWhiteSpace(options.TwitchLogin)
             ? ExtractTwitchLogin(participant.Socials)
             : options.TwitchLogin;
@@ -186,7 +211,12 @@ public static class Program
             var last = segments.LastOrDefault();
             if (string.IsNullOrWhiteSpace(last)) return null;
             var decoded = Uri.UnescapeDataString(last);
-            return decoded;
+            var parts = decoded.Split('-', StringSplitOptions.RemoveEmptyEntries);
+            if (parts.Length < 2) return null;
+            var tag = parts[^1].Trim();
+            var name = string.Join("-", parts.Take(parts.Length - 1)).Trim();
+            if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(tag)) return null;
+            return name + "#" + tag;
         }
         catch
         {

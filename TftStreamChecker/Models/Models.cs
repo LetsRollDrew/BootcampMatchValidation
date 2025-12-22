@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace TftStreamChecker.Models;
 
 public class RiotId
@@ -63,7 +65,9 @@ public class MatchInfo
 
 public class TwitchTokenResponse
 {
+    [JsonPropertyName("access_token")]
     public string AccessToken { get; set; } = string.Empty;
+    [JsonPropertyName("expires_in")]
     public int ExpiresIn { get; set; }
 }
 
@@ -76,6 +80,7 @@ public class TwitchUserDto
 {
     public string Id { get; set; } = string.Empty;
     public string Login { get; set; } = string.Empty;
+    [JsonPropertyName("display_name")]
     public string DisplayName { get; set; } = string.Empty;
 }
 
@@ -89,6 +94,7 @@ public class TwitchVideoDto
 {
     public string? Id { get; set; }
     public string Duration { get; set; } = string.Empty;
+    [JsonPropertyName("created_at")]
     public string CreatedAt { get; set; } = string.Empty;
 }
 
