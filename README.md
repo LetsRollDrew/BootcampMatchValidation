@@ -15,31 +15,36 @@ dotnet build TftStreamChecker.sln
 dotnet test TftStreamChecker.sln
 ```
 
-## CLI flags (current)
-- `--riotId "name#tag"` and `--twitch login` (single parse)
-- `--input file` (batch JSON; top 30 by rank)
-- `--concurrency N` (match detail fetch; default 1)
+## CLI flags
+- `--riotId "name#tag"` and `--twitch login` (single participant)
+- `--input file` (batch JSON; top 30 by Rank)
 - `--outputCsv path` (empty to disable)
+- `--concurrency N` (match detail fetch; default 1)
 - `--noCache` (skip cache reads/writes)
 - window flags: `--days`, `--startTime`, `--endTime`, `--eventYear`, `--eventStart`, `--eventEnd`
+- `--threshold` (pass/fail percent; default 0.5)
 
-## Run
-```bash
-./scripts/stream-check-all.sh
-```
+## Run modes
+- Single participant: pass `--riotId` and `--twitch`.
+- Single JSON batch: `--input inputs/participants.json` (auto top-30 by Rank).
+- Multi-JSON batch: `./scripts/stream-check-all.sh` (processes every `inputs/participants*.json`, writes `output/<file>-results-top30.csv`).
 
-## Usage examples
+## Quick commands
 - Single participant:
   ```bash
   ./run.sh --riotId "Player#NA1" --twitch playerchannel --outputCsv output/stream-check.csv --concurrency 1
   ```
-- BatchIG (place JSONs under `inputs/`):
+- One JSON file:
   ```bash
-  ./run.sh --input inputs/participants.json --outputCsv output/stream-check.csv --concurrency 1
+  ./run.sh --input inputs/participants.json --outputCsv output/participants-results-top30.csv --concurrency 1
+  ```
+- All JSONs in `inputs/`:
+  ```bash
+  ./scripts/stream-check-all.sh
   ```
 
 ## Defaults/toggles:
-- `--concurrency` defaults to 1 (Probably best at 1 with basic API Key)
+- `--concurrency` defaults to 1 (best with basic Riot key)
 - `--outputCsv ""` disables CSV.
 - `--noCache` skips `.cache` reads/writes.
 - Riot 404 for Name Change catches and a zeroed CSV row.
