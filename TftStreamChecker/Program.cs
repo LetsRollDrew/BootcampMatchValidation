@@ -59,6 +59,7 @@ public static class Program
         log.Info("eventStart: " + (options.EventStart ?? "(none)"));
         log.Info("eventEnd: " + (options.EventEnd ?? "(none)"));
         log.Info("threshold: " + options.Threshold);
+        log.Info("concurrency: " + options.Concurrency);
 
         var window = WindowResolver.Resolve(options);
         if (options.Verbose)
