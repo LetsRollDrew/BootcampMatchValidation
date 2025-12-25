@@ -1,6 +1,8 @@
 # BootcampMatchValidation
 Small project to fiddle around with C# and TFT/Twitch API
 
+This tool takes in JSONs as shown under "Batch input format" and validates how many games a player, given a riotID with name#tag and twich LinkUrl, has played on stream, comparing timestamps from their match history to their VOD windows.
+
 ## Setup
 - Install .NET 10 SDK.
 - Copy `.env.example` to `.env` and fill in `RIOT_API_KEY`, `TWITCH_CLIENT_ID`, and `TWITCH_CLIENT_SECRET`.
